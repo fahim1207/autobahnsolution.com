@@ -336,10 +336,24 @@ function initThemeToggle() {
         localStorage.setItem('theme', theme);
     };
     
-    // Toggle theme
+    // Toggle theme with visual flair
     const toggleTheme = () => {
         const currentTheme = body.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
         const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        
+        // Add animation classes
+        themeToggle.classList.add('clicked', 'switching');
+        
+        // Remove ripple effect after animation
+        setTimeout(() => {
+            themeToggle.classList.remove('clicked');
+        }, 600);
+        
+        // Remove switching animation after completion
+        setTimeout(() => {
+            themeToggle.classList.remove('switching');
+        }, 800);
+        
         setTheme(newTheme);
     };
     
@@ -347,8 +361,19 @@ function initThemeToggle() {
     const preferredTheme = getPreferredTheme();
     setTheme(preferredTheme);
     
-    // Add click event listener
-    themeToggle.addEventListener('click', toggleTheme);
+    // Add click event listener with enhanced visual feedback
+    themeToggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        toggleTheme();
+    });
+    
+    // Add visual feedback for keyboard interaction
+    themeToggle.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            toggleTheme();
+        }
+    });
     
     // Listen for system theme changes
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
