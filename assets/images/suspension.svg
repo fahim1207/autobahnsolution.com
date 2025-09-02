@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200">
+  <!-- Shock Absorber/Strut -->
+  <rect x="150" y="40" width="25" height="120" rx="12" fill="#495057" stroke="#343a40" stroke-width="2"/>
+  <rect x="155" y="45" width="15" height="110" fill="#6c757d"/>
+  
+  <!-- Piston rod -->
+  <rect x="160" y="20" width="5" height="40" fill="#adb5bd"/>
+  <circle cx="162.5" cy="20" r="4" fill="#6c757d"/>
+  
+  <!-- Spring -->
+  <g stroke="#dc3545" stroke-width="3" fill="none">
+    <path d="M140 50 Q135 55 140 60 Q145 65 140 70 Q135 75 140 80 Q145 85 140 90 Q135 95 140 100 Q145 105 140 110 Q135 115 140 120 Q145 125 140 130"/>
+  </g>
+  
+  <!-- Top mount -->
+  <rect x="145" y="35" width="35" height="8" rx="4" fill="#2c3e50"/>
+  <circle cx="162.5" cy="39" r="3" fill="#495057"/>
+  
+  <!-- Bottom mount -->
+  <rect x="145" y="157" width="35" height="8" rx="4" fill="#2c3e50"/>
+  <circle cx="162.5" cy="161" r="3" fill="#495057"/>
+  
+  <!-- Control Arm -->
+  <rect x="200" y="140" width="120" height="15" rx="7" fill="#343a40" stroke="#495057" stroke-width="2"/>
+  <circle cx="210" cy="147.5" r="8" fill="#6c757d" stroke="#495057" stroke-width="2"/>
+  <circle cx="310" cy="147.5" r="8" fill="#6c757d" stroke="#495057" stroke-width="2"/>
+  
+  <!-- Ball Joint -->
+  <circle cx="260" cy="147.5" r="10" fill="#2c3e50" stroke="#495057" stroke-width="2"/>
+  <circle cx="260" cy="147.5" r="6" fill="#6c757d"/>
+  
+  <!-- Sway Bar -->
+  <rect x="80" y="100" width="240" height="8" rx="4" fill="#495057"/>
+  <rect x="120" y="95" width="8" height="18" rx="4" fill="#495057"/>
+  <rect x="272" y="95" width="8" height="18" rx="4" fill="#495057"/>
+  
+  <!-- Bushings -->
+  <circle cx="124" cy="104" r="6" fill="#dc3545"/>
+  <circle cx="276" cy="104" r="6" fill="#dc3545"/>
+  
+  <!-- Labels -->
+  <text x="90" y="80" font-family="Arial" font-size="10" fill="#495057">Coil Spring</text>
+  <text x="162" y="180" text-anchor="middle" font-family="Arial" font-size="10" fill="#495057">Shock Absorber</text>
+  <text x="260" y="175" text-anchor="middle" font-family="Arial" font-size="10" fill="#495057">Control Arm</text>
+  <text x="200" y="90" font-family="Arial" font-size="10" fill="#495057">Sway Bar</text>
+</svg>

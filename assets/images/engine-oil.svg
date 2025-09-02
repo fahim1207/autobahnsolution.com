@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200">
+  <!-- Oil Bottle 1 -->
+  <rect x="80" y="50" width="50" height="120" rx="5" fill="#2c3e50" stroke="#495057" stroke-width="2"/>
+  <rect x="85" y="55" width="40" height="110" fill="#343a40"/>
+  
+  <!-- Oil level -->
+  <rect x="87" y="120" width="36" height="43" fill="#ffc107"/>
+  
+  <!-- Bottle cap -->
+  <rect x="95" y="40" width="20" height="15" rx="3" fill="#dc3545"/>
+  <rect x="97" y="42" width="16" height="11" fill="#c82333"/>
+  
+  <!-- Label -->
+  <rect x="90" y="80" width="30" height="25" fill="#fff"/>
+  <text x="105" y="95" text-anchor="middle" font-family="Arial" font-size="8" fill="#000">5W-30</text>
+  
+  <!-- Oil Bottle 2 -->
+  <rect x="160" y="60" width="45" height="110" rx="5" fill="#495057" stroke="#6c757d" stroke-width="2"/>
+  <rect x="165" y="65" width="35" height="100" fill="#6c757d"/>
+  
+  <!-- Oil level -->
+  <rect x="167" y="130" width="31" height="33" fill="#fd7e14"/>
+  
+  <!-- Bottle cap -->
+  <rect x="172" y="50" width="18" height="15" rx="3" fill="#28a745"/>
+  <rect x="174" y="52" width="14" height="11" fill="#218838"/>
+  
+  <!-- Label -->
+  <rect x="170" y="90" width="25" height="20" fill="#fff"/>
+  <text x="182.5" y="102" text-anchor="middle" font-family="Arial" font-size="7" fill="#000">10W-40</text>
+  
+  <!-- Oil Filter -->
+  <circle cx="280" cy="110" r="35" fill="#343a40" stroke="#495057" stroke-width="2"/>
+  <circle cx="280" cy="110" r="30" fill="#495057"/>
+  <circle cx="280" cy="110" r="20" fill="#6c757d"/>
+  
+  <!-- Filter threads -->
+  <g stroke="#adb5bd" stroke-width="1" fill="none">
+    <circle cx="280" cy="110" r="32"/>
+    <circle cx="280" cy="110" r="30"/>
+    <circle cx="280" cy="110" r="28"/>
+  </g>
+  
+  <!-- Oil drain plug -->
+  <polygon points="340,130 360,130 365,140 355,150 345,150 335,140" fill="#6c757d" stroke="#495057" stroke-width="2"/>
+  <circle cx="350" cy="140" r="8" fill="#495057"/>
+  <circle cx="350" cy="140" r="4" fill="#343a40"/>
+  
+  <!-- Oil funnel -->
+  <polygon points="50,30 70,30 65,50 55,50" fill="#adb5bd" stroke="#6c757d" stroke-width="2"/>
+  <rect x="57" y="50" width="6" height="20" fill="#adb5bd"/>
+  
+  <!-- Labels -->
+  <text x="105" y="185" text-anchor="middle" font-family="Arial" font-size="10" fill="#495057">Motor Oil</text>
+  <text x="182.5" y="185" text-anchor="middle" font-family="Arial" font-size="10" fill="#495057">Synthetic Oil</text>
+  <text x="280" y="160" text-anchor="middle" font-family="Arial" font-size="10" fill="#495057">Oil Filter</text>
+  <text x="350" y="170" text-anchor="middle" font-family="Arial" font-size="10" fill="#495057">Drain Plug</text>
+  <text x="60" y="80" text-anchor="middle" font-family="Arial" font-size="9" fill="#495057">Funnel</text>
+</svg>

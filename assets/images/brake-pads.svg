@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200">
+  <!-- Brake Disc -->
+  <circle cx="200" cy="100" r="70" fill="#6c757d" stroke="#495057" stroke-width="3"/>
+  <circle cx="200" cy="100" r="60" fill="#adb5bd"/>
+  <circle cx="200" cy="100" r="25" fill="#495057"/>
+  
+  <!-- Disc vents/slots -->
+  <rect x="190" y="50" width="20" height="8" rx="2" fill="#495057"/>
+  <rect x="190" y="142" width="20" height="8" rx="2" fill="#495057"/>
+  <rect x="150" y="90" width="8" height="20" rx="2" fill="#495057"/>
+  <rect x="242" y="90" width="8" height="20" rx="2" fill="#495057"/>
+  
+  <!-- Diagonal vents -->
+  <rect x="165" y="65" width="12" height="6" rx="2" fill="#495057"/>
+  <rect x="223" y="129" width="12" height="6" rx="2" fill="#495057"/>
+  <rect x="165" y="129" width="12" height="6" rx="2" fill="#495057"/>
+  <rect x="223" y="65" width="12" height="6" rx="2" fill="#495057"/>
+  
+  <!-- Brake Pads -->
+  <rect x="120" y="80" width="35" height="40" rx="3" fill="#2c3e50" stroke="#495057" stroke-width="2"/>
+  <rect x="245" y="80" width="35" height="40" rx="3" fill="#2c3e50" stroke="#495057" stroke-width="2"/>
+  
+  <!-- Brake pad friction material -->
+  <rect x="125" y="85" width="25" height="30" fill="#dc3545"/>
+  <rect x="250" y="85" width="25" height="30" fill="#dc3545"/>
+  
+  <!-- Brake pad backing plate -->
+  <rect x="120" y="115" width="35" height="5" fill="#495057"/>
+  <rect x="245" y="115" width="35" height="5" fill="#495057"/>
+  
+  <!-- Caliper left side -->
+  <rect x="100" y="70" width="20" height="60" rx="5" fill="#343a40" stroke="#495057" stroke-width="2"/>
+  
+  <!-- Caliper right side -->
+  <rect x="280" y="70" width="20" height="60" rx="5" fill="#343a40" stroke="#495057" stroke-width="2"/>
+  
+  <!-- Labels -->
+  <text x="137" y="140" text-anchor="middle" font-family="Arial" font-size="10" fill="#495057">Brake Pad</text>
+  <text x="200" y="180" text-anchor="middle" font-family="Arial" font-size="12" fill="#495057">Brake Disc and Pads</text>
+  <text x="262" y="140" text-anchor="middle" font-family="Arial" font-size="10" fill="#495057">Brake Pad</text>
+</svg>

@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200">
+  <!-- Air Filter -->
+  <rect x="50" y="50" width="120" height="80" rx="5" fill="#f8f9fa" stroke="#6c757d" stroke-width="2"/>
+  <rect x="55" y="55" width="110" height="70" fill="#fff"/>
+  
+  <!-- Filter pleats -->
+  <g stroke="#dc3545" stroke-width="1" fill="none">
+    <line x1="65" y1="60" x2="65" y2="120"/>
+    <line x1="75" y1="60" x2="75" y2="120"/>
+    <line x1="85" y1="60" x2="85" y2="120"/>
+    <line x1="95" y1="60" x2="95" y2="120"/>
+    <line x1="105" y1="60" x2="105" y2="120"/>
+    <line x1="115" y1="60" x2="115" y2="120"/>
+    <line x1="125" y1="60" x2="125" y2="120"/>
+    <line x1="135" y1="60" x2="135" y2="120"/>
+    <line x1="145" y1="60" x2="145" y2="120"/>
+    <line x1="155" y1="60" x2="155" y2="120"/>
+  </g>
+  
+  <!-- Oil Filter -->
+  <circle cx="250" cy="90" r="40" fill="#2c3e50" stroke="#495057" stroke-width="2"/>
+  <circle cx="250" cy="90" r="35" fill="#343a40"/>
+  <circle cx="250" cy="90" r="25" fill="#6c757d"/>
+  <circle cx="250" cy="90" r="15" fill="#adb5bd"/>
+  
+  <!-- Filter threads -->
+  <g stroke="#fff" stroke-width="1" fill="none">
+    <circle cx="250" cy="90" r="38"/>
+    <circle cx="250" cy="90" r="36"/>
+    <circle cx="250" cy="90" r="34"/>
+  </g>
+  
+  <!-- Fuel Filter -->
+  <rect x="320" y="70" width="60" height="40" rx="20" fill="#495057" stroke="#6c757d" stroke-width="2"/>
+  <circle cx="325" cy="90" r="8" fill="#dc3545"/>
+  <circle cx="375" cy="90" r="8" fill="#dc3545"/>
+  <line x1="333" y1="90" x2="367" y2="90" stroke="#fff" stroke-width="2"/>
+  
+  <!-- Labels -->
+  <text x="110" y="145" text-anchor="middle" font-family="Arial" font-size="12" fill="#495057">Air Filter</text>
+  <text x="250" y="145" text-anchor="middle" font-family="Arial" font-size="12" fill="#495057">Oil Filter</text>
+  <text x="350" y="145" text-anchor="middle" font-family="Arial" font-size="12" fill="#495057">Fuel Filter</text>
+</svg>
