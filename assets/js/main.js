@@ -305,18 +305,8 @@ const throttledScroll = throttle(() => {
 
 window.addEventListener('scroll', throttledScroll);
 
-// Service Worker Registration (for PWA capabilities)
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', function() {
-        navigator.serviceWorker.register('/sw.js')
-            .then(function(registration) {
-                console.log('ServiceWorker registration successful');
-            })
-            .catch(function(err) {
-                console.log('ServiceWorker registration failed');
-            });
-    });
-}
+// Service Worker Registration removed for Replit static hosting
+// PWA capabilities not required for this static website
 
 // Preload Critical Resources
 function preloadCriticalResources() {
