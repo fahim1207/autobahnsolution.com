@@ -205,6 +205,20 @@ html {
     transition: all 0.3s ease !important;
 }
 
+/* Ensure toggler stays in place during all navbar states */
+.navbar-toggler,
+.navbar-toggler:focus,
+.navbar-toggler:hover,
+.navbar-toggler:active,
+.navbar-toggler[aria-expanded="true"],
+.navbar-toggler[aria-expanded="false"] {
+    position: absolute !important;
+    top: 50% !important;
+    right: 15px !important;
+    transform: translateY(-50%) !important;
+    z-index: 1050 !important;
+}
+
 /* Theme Toggle Styles */
 .theme-toggle {
     border: none !important;
@@ -297,6 +311,15 @@ html {
     /* Mobile navbar adjustments */
     .navbar .container {
         position: relative;
+    }
+    
+    /* Force toggler to stay in position on mobile during collapse animation */
+    .navbar-toggler {
+        position: fixed !important;
+        top: 15px !important;
+        right: 15px !important;
+        transform: none !important;
+        z-index: 1050 !important;
     }
     
 
