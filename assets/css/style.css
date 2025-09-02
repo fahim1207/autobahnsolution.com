@@ -248,27 +248,17 @@ html {
     transform: translate(-50%, -50%);
 }
 
-/* Swirl animation during theme switch */
-.theme-toggle.swirling i {
-    animation: iconSwirl 0.8s ease-in-out;
+/* Simple rotate animation during theme switch */
+.theme-toggle.rotating i {
+    animation: iconRotate 0.4s ease-in-out;
 }
 
-@keyframes iconSwirl {
+@keyframes iconRotate {
     0% {
-        transform: translate(-50%, -50%) rotate(0deg) scale(1);
-        opacity: 1;
-    }
-    50% {
-        transform: translate(-50%, -50%) rotate(180deg) scale(0);
-        opacity: 0;
-    }
-    51% {
-        transform: translate(-50%, -50%) rotate(-180deg) scale(0);
-        opacity: 0;
+        transform: translate(-50%, -50%) rotate(0deg);
     }
     100% {
-        transform: translate(-50%, -50%) rotate(0deg) scale(1);
-        opacity: 1;
+        transform: translate(-50%, -50%) rotate(180deg);
     }
 }
 
@@ -304,6 +294,52 @@ html {
         z-index: 1050 !important;
         border: none !important;
         padding: 4px 8px !important;
+        transition: all 0.3s ease;
+    }
+    
+    /* Custom hamburger icon */
+    .navbar-toggler-icon {
+        background-image: none !important;
+        position: relative;
+        width: 20px;
+        height: 16px;
+    }
+    
+    .navbar-toggler-icon::before,
+    .navbar-toggler-icon::after,
+    .navbar-toggler-icon {
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 2px;
+        background-color: rgba(255, 255, 255, 0.85);
+        transition: all 0.3s ease;
+        border-radius: 1px;
+    }
+    
+    .navbar-toggler-icon::before {
+        top: 0;
+    }
+    
+    .navbar-toggler-icon {
+        top: 7px;
+    }
+    
+    .navbar-toggler-icon::after {
+        top: 14px;
+    }
+    
+    /* Transform to X when collapsed */
+    .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+        background-color: transparent;
+    }
+    
+    .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    
+    .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
+        transform: rotate(-45deg) translate(7px, -6px);
     }
     
     .navbar-brand {

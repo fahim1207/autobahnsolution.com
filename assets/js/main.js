@@ -336,23 +336,21 @@ function initThemeToggle() {
         localStorage.setItem('theme', theme);
     };
     
-    // Toggle theme with swirl animation
+    // Toggle theme with simple rotate animation
     const toggleTheme = () => {
         const currentTheme = body.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
         const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
         
-        // Add swirl animation class
-        themeToggle.classList.add('swirling');
+        // Add rotate animation class
+        themeToggle.classList.add('rotating');
         
-        // Change the theme halfway through the animation (when icon is invisible)
-        setTimeout(() => {
-            setTheme(newTheme);
-        }, 400);
+        // Change the theme immediately with the rotation
+        setTheme(newTheme);
         
         // Remove animation class after completion
         setTimeout(() => {
-            themeToggle.classList.remove('swirling');
-        }, 800);
+            themeToggle.classList.remove('rotating');
+        }, 400);
     };
     
     // Initialize theme on load
