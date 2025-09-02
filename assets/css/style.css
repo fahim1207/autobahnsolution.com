@@ -852,6 +852,18 @@ html {
         max-height: 28px;
         max-width: 28px;
     }
+    
+    /* Ensure navbar toggler stays in position for ultra-narrow screens */
+    .navbar-toggler {
+        position: absolute !important;
+        top: 50% !important;
+        right: 15px !important;
+        transform: translateY(-50%) !important;
+        z-index: 1050 !important;
+        border: none !important;
+        padding: 4px 8px !important;
+        transition: all 0.3s ease;
+    }
 }
 
 
@@ -1245,6 +1257,18 @@ footer a.text-muted:hover {
     .service-card,
     .parts-card {
         margin-bottom: 20px;
+    }
+    
+    /* Ensure navbar toggler stays in position for very narrow screens */
+    .navbar-toggler {
+        position: absolute !important;
+        top: 50% !important;
+        right: 15px !important;
+        transform: translateY(-50%) !important;
+        z-index: 1050 !important;
+        border: none !important;
+        padding: 4px 8px !important;
+        transition: all 0.3s ease;
     }
 }
 
