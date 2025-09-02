@@ -303,11 +303,11 @@ html {
         position: relative;
         width: 20px;
         height: 16px;
+        background-color: transparent !important;
     }
     
     .navbar-toggler-icon::before,
-    .navbar-toggler-icon::after,
-    .navbar-toggler-icon {
+    .navbar-toggler-icon::after {
         content: '';
         position: absolute;
         width: 20px;
@@ -315,31 +315,28 @@ html {
         background-color: rgba(255, 255, 255, 0.85);
         transition: all 0.3s ease;
         border-radius: 1px;
+        left: 0;
     }
     
     .navbar-toggler-icon::before {
         top: 0;
-    }
-    
-    .navbar-toggler-icon {
-        top: 7px;
+        box-shadow: 0 7px 0 rgba(255, 255, 255, 0.85);
     }
     
     .navbar-toggler-icon::after {
-        top: 14px;
+        bottom: 0;
     }
     
-    /* Transform to X when collapsed */
-    .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
-        background-color: transparent;
-    }
-    
+    /* Transform to X when expanded */
     .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
-        transform: rotate(45deg) translate(5px, 5px);
+        top: 7px;
+        transform: rotate(45deg);
+        box-shadow: none;
     }
     
     .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
-        transform: rotate(-45deg) translate(7px, -6px);
+        bottom: 7px;
+        transform: rotate(-45deg);
     }
     
     .navbar-brand {
