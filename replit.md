@@ -112,6 +112,14 @@ The architecture prioritizes simplicity, performance, and maintainability while 
 
 ## Recent Changes
 
+### September 2, 2025
+- **Comprehensive Theme Switcher**: Implemented light/dark mode toggle with system preference detection and localStorage persistence
+- **Enhanced Animations**: Added swirl transition effect that swaps sun/moon icons with proper rotation and scaling
+- **Realistic Colors**: Sun icon displays in golden yellow (#ffd700) with brighter hover state, moon icon in ghost white (#f8f8ff) with pure white hover
+- **Dark Mode Optimization**: Fixed testimonials section styling and improved font contrast ratios for accessibility
+- **Visual Feedback**: Swirl animation creates smooth icon transition during theme switching with proper timing
+- **Accessibility**: Maintained WCAG contrast standards across both themes with enhanced readability
+
 ### August 23, 2025
 - **Modern Brands Marquee**: Replaced static carousel with auto-scrolling marquee component inspired by GitHub homepage
 - **Logo Normalization**: Applied individual CSS sizing rules to ensure uniform appearance across different logo dimensions

@@ -197,82 +197,78 @@ html {
 .theme-toggle {
     border: none !important;
     background: transparent !important;
-    color: #ffffff !important;
     padding: 0.5rem !important;
-    font-size: 1.1rem;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
     border-radius: 50%;
     position: relative;
-    overflow: hidden;
     width: 40px;
     height: 40px;
+    overflow: hidden;
 }
 
-.theme-toggle:hover {
-    color: var(--primary-red) !important;
-    background: rgba(255, 255, 255, 0.1) !important;
-    transform: scale(1.15);
+/* Sun icon styling (light mode) */
+.theme-toggle .bi-sun-fill {
+    color: #ffd700 !important; /* Golden yellow */
+    filter: drop-shadow(0 0 4px rgba(255, 215, 0, 0.3));
+}
+
+.theme-toggle:hover .bi-sun-fill {
+    color: #ffed4e !important; /* Brighter yellow on hover */
+    filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.5));
+    transform: scale(1.1);
+}
+
+/* Moon icon styling (dark mode) */
+.theme-toggle .bi-moon-fill {
+    color: #f8f8ff !important; /* Ghost white */
+    filter: drop-shadow(0 0 2px rgba(248, 248, 255, 0.3));
+}
+
+.theme-toggle:hover .bi-moon-fill {
+    color: #ffffff !important; /* Pure white on hover */
+    filter: drop-shadow(0 0 6px rgba(248, 248, 255, 0.4));
+    transform: scale(1.1);
 }
 
 .theme-toggle:focus {
-    box-shadow: 0 0 15px rgba(220, 53, 69, 0.4) !important;
-    background: transparent !important;
     outline: none;
 }
 
 .theme-toggle:active {
-    transform: scale(0.9);
+    transform: scale(0.95);
 }
 
-/* Ripple effect animation */
-.theme-toggle::before {
-    content: '';
+/* Icon transition container */
+.theme-toggle i {
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 0;
-    height: 0;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(220, 53, 69, 0.3), rgba(255, 255, 255, 0.2));
     transform: translate(-50%, -50%);
-    transition: width 0.6s ease, height 0.6s ease, opacity 0.6s ease;
-    opacity: 0;
-    pointer-events: none;
 }
 
-.theme-toggle.clicked::before {
-    width: 80px;
-    height: 80px;
-    opacity: 1;
+/* Swirl animation during theme switch */
+.theme-toggle.swirling i {
+    animation: iconSwirl 0.8s ease-in-out;
 }
 
-.theme-toggle i {
-    transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    position: relative;
-    z-index: 1;
-}
-
-.theme-toggle:hover i {
-    transform: rotate(20deg) scale(1.1);
-}
-
-/* Theme switching animation */
-.theme-toggle.switching i {
-    transform: rotate(360deg) scale(1.3);
-    filter: drop-shadow(0 0 8px rgba(220, 53, 69, 0.6));
-}
-
-/* Glow effect during theme switch */
-.theme-toggle.switching {
-    animation: themeGlow 0.8s ease-in-out;
-}
-
-@keyframes themeGlow {
-    0%, 100% {
-        box-shadow: 0 0 5px rgba(220, 53, 69, 0.3);
+@keyframes iconSwirl {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg) scale(1);
+        opacity: 1;
     }
     50% {
-        box-shadow: 0 0 20px rgba(220, 53, 69, 0.6), 0 0 30px rgba(220, 53, 69, 0.4);
+        transform: translate(-50%, -50%) rotate(180deg) scale(0);
+        opacity: 0;
+    }
+    51% {
+        transform: translate(-50%, -50%) rotate(-180deg) scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(0deg) scale(1);
+        opacity: 1;
     }
 }
 

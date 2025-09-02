@@ -336,25 +336,23 @@ function initThemeToggle() {
         localStorage.setItem('theme', theme);
     };
     
-    // Toggle theme with visual flair
+    // Toggle theme with swirl animation
     const toggleTheme = () => {
         const currentTheme = body.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
         const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
         
-        // Add animation classes
-        themeToggle.classList.add('clicked', 'switching');
+        // Add swirl animation class
+        themeToggle.classList.add('swirling');
         
-        // Remove ripple effect after animation
+        // Change the theme halfway through the animation (when icon is invisible)
         setTimeout(() => {
-            themeToggle.classList.remove('clicked');
-        }, 600);
+            setTheme(newTheme);
+        }, 400);
         
-        // Remove switching animation after completion
+        // Remove animation class after completion
         setTimeout(() => {
-            themeToggle.classList.remove('switching');
+            themeToggle.classList.remove('swirling');
         }, 800);
-        
-        setTheme(newTheme);
     };
     
     // Initialize theme on load
