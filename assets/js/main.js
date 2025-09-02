@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initBrandsMarquee();
     initTypewriter();
     initFAB();
+    initThemeToggle();
 });
 
 // Initialize Brands Marquee
@@ -307,6 +308,55 @@ window.addEventListener('scroll', throttledScroll);
 
 // Service Worker Registration removed for Replit static hosting
 // PWA capabilities not required for this static website
+
+// Theme Toggle Functionality
+function initThemeToggle() {
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    const body = document.body;
+    
+    // Get stored theme preference or system preference
+    const getPreferredTheme = () => {
+        const storedTheme = localStorage.getItem('theme');
+        if (storedTheme) {
+            return storedTheme;
+        }
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    };
+    
+    // Set theme and update icon
+    const setTheme = (theme) => {
+        if (theme === 'dark') {
+            body.setAttribute('data-theme', 'dark');
+            themeIcon.className = 'bi bi-moon-fill';
+        } else {
+            body.removeAttribute('data-theme');
+            themeIcon.className = 'bi bi-sun-fill';
+        }
+        localStorage.setItem('theme', theme);
+    };
+    
+    // Toggle theme
+    const toggleTheme = () => {
+        const currentTheme = body.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        setTheme(newTheme);
+    };
+    
+    // Initialize theme on load
+    const preferredTheme = getPreferredTheme();
+    setTheme(preferredTheme);
+    
+    // Add click event listener
+    themeToggle.addEventListener('click', toggleTheme);
+    
+    // Listen for system theme changes
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+        if (!localStorage.getItem('theme')) {
+            setTheme(e.matches ? 'dark' : 'light');
+        }
+    });
+}
 
 // Preload Critical Resources
 function preloadCriticalResources() {

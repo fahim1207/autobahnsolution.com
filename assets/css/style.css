@@ -1,11 +1,53 @@
 /* Custom CSS for Autobahn Solutions */
 
 :root {
+    /* Light Theme Colors */
     --primary-red: #dc3545;
-    --dark-grey: #2c3e50;
-    --light-grey: #95a5a6;
-    --text-dark: #2c3e50;
-    --text-light: #6c757d;
+    --primary-red-hover: #c82333;
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --bg-light: #e9ecef;
+    --text-primary: #2c3e50;
+    --text-secondary: #6c757d;
+    --text-muted: #95a5a6;
+    --border-color: #dee2e6;
+    --navbar-bg: rgba(33, 37, 41, 0.95);
+    --card-bg: #ffffff;
+    --shadow: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] {
+    /* Dark Theme Colors */
+    --primary-red: #e74c3c;
+    --primary-red-hover: #c0392b;
+    --bg-primary: #181824;
+    --bg-secondary: #252529;
+    --bg-light: #2a2a2e;
+    --text-primary: #e1e1e1;
+    --text-secondary: #b8b8b8;
+    --text-muted: #8f8f8f;
+    --border-color: #3c3c41;
+    --navbar-bg: rgba(24, 24, 36, 0.95);
+    --card-bg: #252529;
+    --shadow: rgba(0, 0, 0, 0.3);
+}
+
+/* System preference detection */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme]) {
+        --primary-red: #e74c3c;
+        --primary-red-hover: #c0392b;
+        --bg-primary: #181824;
+        --bg-secondary: #252529;
+        --bg-light: #2a2a2e;
+        --text-primary: #e1e1e1;
+        --text-secondary: #b8b8b8;
+        --text-muted: #8f8f8f;
+        --border-color: #3c3c41;
+        --navbar-bg: rgba(24, 24, 36, 0.95);
+        --card-bg: #252529;
+        --shadow: rgba(0, 0, 0, 0.3);
+    }
 }
 
 /* Global Styles */
@@ -19,10 +61,68 @@ html, body {
     overflow-x: hidden;
 }
 
+/* Sections */
+.py-5 {
+    background-color: var(--bg-primary);
+    transition: background-color 0.3s ease;
+}
+
+.bg-light {
+    background-color: var(--bg-secondary) !important;
+    transition: background-color 0.3s ease;
+}
+
+/* Cards */
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.card-body {
+    color: var(--text-primary);
+}
+
+.card-title {
+    color: var(--text-primary);
+}
+
+.card-text {
+    color: var(--text-secondary);
+}
+
+/* Text Colors */
+.text-muted {
+    color: var(--text-muted) !important;
+}
+
+.text-dark {
+    color: var(--text-primary) !important;
+}
+
+/* Buttons */
+.btn-danger {
+    background-color: var(--primary-red);
+    border-color: var(--primary-red);
+    transition: all 0.3s ease;
+}
+
+.btn-danger:hover {
+    background-color: var(--primary-red-hover);
+    border-color: var(--primary-red-hover);
+}
+
+.btn-outline-light:hover {
+    background-color: var(--primary-red);
+    border-color: var(--primary-red);
+}
+
 body {
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
-    color: var(--text-dark);
+    color: var(--text-primary);
+    background-color: var(--bg-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -38,9 +138,38 @@ html {
 /* Navigation */
 .navbar {
     backdrop-filter: blur(10px);
-    background-color: rgba(33, 37, 41, 0.95) !important;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: var(--navbar-bg) !important;
+    box-shadow: 0 2px 10px var(--shadow);
     transition: all 0.3s ease;
+}
+
+/* Theme Toggle Styles */
+.theme-toggle {
+    border: none !important;
+    background: transparent !important;
+    color: #ffffff !important;
+    padding: 0.5rem !important;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    color: var(--primary-red) !important;
+    background: transparent !important;
+    transform: scale(1.1);
+}
+
+.theme-toggle:focus {
+    box-shadow: 0 0 0 2px var(--primary-red) !important;
+    background: transparent !important;
+}
+
+.theme-toggle i {
+    transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover i {
+    transform: rotate(180deg);
 }
 
 .navbar-brand {
@@ -1002,3 +1131,41 @@ footer a.text-muted:hover {
 }
 
 
+
+
+/* Dark Mode Specific Styles */
+[data-theme="dark"] img:not(.brand-logo):not([src*="hero-background"]) {
+    filter: brightness(0.9);
+}
+
+[data-theme="dark"] .hero-section {
+    background: linear-gradient(rgba(24, 24, 36, 0.7), rgba(231, 76, 60, 0.5)), 
+                url('../images/hero-background.webp');
+}
+
+[data-theme="dark"] footer.bg-dark {
+    background-color: var(--bg-secondary) !important;
+}
+
+[data-theme="dark"] .form-control,
+[data-theme="dark"] .form-select {
+    background-color: var(--bg-light);
+    border-color: var(--border-color);
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .form-control:focus,
+[data-theme="dark"] .form-select:focus {
+    background-color: var(--bg-light);
+    border-color: var(--primary-red);
+    color: var(--text-primary);
+    box-shadow: 0 0 0 0.2rem rgba(231, 76, 60, 0.25);
+}
+
+[data-theme="dark"] .navbar-toggler {
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .shadow-sm {
+    box-shadow: 0 .125rem .25rem var(--shadow) !important;
+}
