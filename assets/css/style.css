@@ -85,6 +85,34 @@ html, body {
     background-color: #252529 !important;
 }
 
+/* Testimonials section dark mode */
+[data-theme="dark"] #testimonials {
+    background-color: #252529 !important;
+}
+
+[data-theme="dark"] .testimonial-card {
+    background-color: #2a2a2e !important;
+    border: 1px solid #3c3c41;
+}
+
+[data-theme="dark"] .testimonial-card .blockquote,
+[data-theme="dark"] .testimonial-card .blockquote p {
+    color: #e1e1e1 !important;
+}
+
+[data-theme="dark"] .testimonial-card h6 {
+    color: #e1e1e1 !important;
+}
+
+[data-theme="dark"] .testimonial-card small {
+    color: #b8b8b8 !important;
+}
+
+[data-theme="dark"] .carousel-control-prev,
+[data-theme="dark"] .carousel-control-next {
+    color: #e1e1e1;
+}
+
 [data-theme="dark"] .card {
     background-color: #252529;
     border: 1px solid #3c3c41;
@@ -100,11 +128,29 @@ html, body {
 }
 
 [data-theme="dark"] .text-muted {
-    color: #8f8f8f !important;
+    color: #b8b8b8 !important;
 }
 
 [data-theme="dark"] .text-dark {
     color: #e1e1e1 !important;
+}
+
+/* Better contrast for headings and lead text in dark mode */
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] h4,
+[data-theme="dark"] h5,
+[data-theme="dark"] h6 {
+    color: #f5f5f5 !important;
+}
+
+[data-theme="dark"] .lead {
+    color: #d1d1d1 !important;
+}
+
+[data-theme="dark"] .fw-bold {
+    color: #f5f5f5 !important;
 }
 
 [data-theme="dark"] .btn-danger {
