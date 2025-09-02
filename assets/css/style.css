@@ -193,6 +193,18 @@ html {
     transition: all 0.3s ease;
 }
 
+/* Global navbar toggler positioning - overrides Bootstrap defaults */
+.navbar-toggler {
+    position: absolute !important;
+    top: 50% !important;
+    right: 15px !important;
+    transform: translateY(-50%) !important;
+    z-index: 1050 !important;
+    border: none !important;
+    padding: 4px 8px !important;
+    transition: all 0.3s ease !important;
+}
+
 /* Theme Toggle Styles */
 .theme-toggle {
     border: none !important;
@@ -216,7 +228,7 @@ html {
 .theme-toggle:hover .bi-sun-fill {
     color: #ffed4e !important; /* Brighter yellow on hover */
     filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.5));
-    transform: scale(1.1);
+    transform: scale(1.2);
 }
 
 /* Moon icon styling (dark mode) */
@@ -227,8 +239,8 @@ html {
 
 .theme-toggle:hover .bi-moon-fill {
     color: #ffffff !important; /* Pure white on hover */
-    filter: drop-shadow(0 0 6px rgba(248, 248, 255, 0.4));
-    transform: scale(1.1);
+    filter: drop-shadow(0 0 8px rgba(248, 248, 255, 0.6));
+    transform: scale(1.2);
 }
 
 .theme-toggle:focus {
@@ -286,16 +298,7 @@ html {
         position: relative;
     }
     
-    .navbar-toggler {
-        position: absolute !important;
-        top: 50% !important;
-        right: 15px !important;
-        transform: translateY(-50%) !important;
-        z-index: 1050 !important;
-        border: none !important;
-        padding: 4px 8px !important;
-        transition: all 0.3s ease;
-    }
+
     
     /* Custom hamburger icon */
     .navbar-toggler-icon {
@@ -853,17 +856,7 @@ html {
         max-width: 28px;
     }
     
-    /* Ensure navbar toggler stays in position for ultra-narrow screens */
-    .navbar-toggler {
-        position: absolute !important;
-        top: 50% !important;
-        right: 15px !important;
-        transform: translateY(-50%) !important;
-        z-index: 1050 !important;
-        border: none !important;
-        padding: 4px 8px !important;
-        transition: all 0.3s ease;
-    }
+
 }
 
 
@@ -1259,17 +1252,7 @@ footer a.text-muted:hover {
         margin-bottom: 20px;
     }
     
-    /* Ensure navbar toggler stays in position for very narrow screens */
-    .navbar-toggler {
-        position: absolute !important;
-        top: 50% !important;
-        right: 15px !important;
-        transform: translateY(-50%) !important;
-        z-index: 1050 !important;
-        border: none !important;
-        padding: 4px 8px !important;
-        transition: all 0.3s ease;
-    }
+
 }
 
 
