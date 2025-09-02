@@ -1,12 +1,18 @@
 /* Custom CSS for Autobahn Solutions */
 
 :root {
-    /* Light Theme Colors */
+    /* Original Light Theme Colors - Unchanged */
     --primary-red: #dc3545;
+    --dark-grey: #2c3e50;
+    --light-grey: #95a5a6;
+    --text-dark: #2c3e50;
+    --text-light: #6c757d;
+    
+    /* Theme variables for compatibility */
     --primary-red-hover: #c82333;
-    --bg-primary: #ffffff;
-    --bg-secondary: #f8f9fa;
-    --bg-light: #e9ecef;
+    --bg-primary: transparent;
+    --bg-secondary: transparent;
+    --bg-light: transparent;
     --text-primary: #2c3e50;
     --text-secondary: #6c757d;
     --text-muted: #95a5a6;
@@ -61,67 +67,65 @@ html, body {
     overflow-x: hidden;
 }
 
-/* Sections */
-.py-5 {
+/* Dark Mode Only Overrides */
+[data-theme="dark"] {
     background-color: var(--bg-primary);
-    transition: background-color 0.3s ease;
 }
 
-.bg-light {
-    background-color: var(--bg-secondary) !important;
-    transition: background-color 0.3s ease;
+[data-theme="dark"] body {
+    background-color: #181824;
+    color: #e1e1e1;
 }
 
-/* Cards */
-.card {
-    background-color: var(--card-bg);
-    border: 1px solid var(--border-color);
-    transition: all 0.3s ease;
+[data-theme="dark"] .py-5 {
+    background-color: #181824;
 }
 
-.card-body {
-    color: var(--text-primary);
+[data-theme="dark"] .bg-light {
+    background-color: #252529 !important;
 }
 
-.card-title {
-    color: var(--text-primary);
+[data-theme="dark"] .card {
+    background-color: #252529;
+    border: 1px solid #3c3c41;
 }
 
-.card-text {
-    color: var(--text-secondary);
+[data-theme="dark"] .card-body,
+[data-theme="dark"] .card-title {
+    color: #e1e1e1;
 }
 
-/* Text Colors */
-.text-muted {
-    color: var(--text-muted) !important;
+[data-theme="dark"] .card-text {
+    color: #b8b8b8;
 }
 
-.text-dark {
-    color: var(--text-primary) !important;
+[data-theme="dark"] .text-muted {
+    color: #8f8f8f !important;
 }
 
-/* Buttons */
-.btn-danger {
-    background-color: var(--primary-red);
-    border-color: var(--primary-red);
-    transition: all 0.3s ease;
+[data-theme="dark"] .text-dark {
+    color: #e1e1e1 !important;
 }
 
-.btn-danger:hover {
-    background-color: var(--primary-red-hover);
-    border-color: var(--primary-red-hover);
+[data-theme="dark"] .btn-danger {
+    background-color: #e74c3c;
+    border-color: #e74c3c;
 }
 
-.btn-outline-light:hover {
-    background-color: var(--primary-red);
-    border-color: var(--primary-red);
+[data-theme="dark"] .btn-danger:hover {
+    background-color: #c0392b;
+    border-color: #c0392b;
+}
+
+[data-theme="dark"] .btn-outline-light:hover {
+    background-color: #e74c3c;
+    border-color: #e74c3c;
 }
 
 body {
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
-    color: var(--text-primary);
-    background-color: var(--bg-primary);
+    color: var(--text-dark);
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -1138,10 +1142,7 @@ footer a.text-muted:hover {
     filter: brightness(0.9);
 }
 
-[data-theme="dark"] .hero-section {
-    background: linear-gradient(rgba(24, 24, 36, 0.7), rgba(231, 76, 60, 0.5)), 
-                url('../images/hero-background.webp');
-}
+/* Keep original hero background - no changes needed */
 
 [data-theme="dark"] footer.bg-dark {
     background-color: var(--bg-secondary) !important;
