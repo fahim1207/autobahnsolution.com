@@ -730,6 +730,11 @@ html {
     background: rgba(0, 0, 0, 0.1);
 }
 
+/* Dark mode: stronger hero overlay for better contrast */
+[data-theme="dark"] .hero-overlay {
+    background: rgba(0, 0, 0, 0.5);
+}
+
 .hero-section .container {
     position: relative;
     z-index: 2;
