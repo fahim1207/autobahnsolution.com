@@ -424,6 +424,71 @@ html {
     }
 }
 
+/* Minimal mobile navbar layout fix */
+@media (max-width: 768px) {
+  .navbar .container {
+    position: relative; /* ensure absolute children anchor to the header */
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap !important; /* prevent wrapping that pushes toggler down */
+    min-height: 56px; /* typical navbar height */
+  }
+
+  .navbar-brand {
+    flex: 0 0 auto;
+    display: flex !important;
+    align-items: center !important;
+    margin-right: 0 !important;
+    padding-right: 56px !important; /* reserve space for toggler area */
+    max-width: calc(100% - 56px) !important; /* avoid pushing toggler */
+    overflow: hidden; /* keep brand from expanding height */
+  }
+
+  /* Center title within safe zone between logo and toggler */
+  .navbar .navbar-title {
+    position: absolute;
+    top: 50%;
+    left: 72px;  /* approximate logo/brand safe space */
+    right: 56px; /* space for toggler */
+    transform: translateY(-50%);
+    text-align: center !important;
+    margin: 0 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  /* Pin hamburger to the right, vertically centered */
+  .navbar .navbar-toggler {
+    position: absolute;
+    right: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3; /* above title */
+    margin: 0 !important;
+  }
+
+  /* Ensure collapsed menu spans full width below header when opened */
+  .navbar .navbar-collapse {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 2; /* below the toggler (z-index: 3) */
+    background-color: var(--navbar-bg);
+  }
+}
+
+@media (max-width: 480px) {
+  /* Slightly tighten safe zones for ultra-narrow devices */
+  .navbar .navbar-title {
+    left: 60px;
+    right: 52px;
+    font-size: 1rem; /* keep readable but compact */
+  }
+}
+
 /* Additional tablet adjustments */
 @media (max-width: 992px) and (min-width: 769px) {
     .hero-section {
