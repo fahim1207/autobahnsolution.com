@@ -557,8 +557,78 @@ html {
     transition: color 0.3s ease;
 }
 
-.nav-link:hover {
+/* Scope hover color to navbar links only to avoid interfering with pills/tabs */
+.navbar .nav-link:hover {
     color: var(--primary-red) !important;
+}
+
+/* Tabs */
+.nav-pills .nav-link {
+    border-radius: 50px;
+    padding: 12px 25px;
+    font-weight: 600;
+    margin: 0 10px;
+    transition: all 0.3s ease;
+}
+
+.nav-pills .nav-link.active {
+    background-color: var(--primary-red);
+    border: none;
+}
+
+/* Spare Parts tabs: mimic hero button hover/click feel while keeping distinct colors */
+#parts .nav-pills .nav-link {
+    background-color: #ffffff;
+    color: var(--text-dark);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+#parts .nav-pills .nav-link:hover {
+    color: var(--primary-red);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+#parts .nav-pills .nav-link:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+#parts .nav-pills .nav-link:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25), 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+#parts .nav-pills .nav-link.active {
+    background-color: var(--primary-red);
+    color: #ffffff !important; /* keep text legible even on hover */
+    border-color: var(--primary-red);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.20);
+}
+
+#parts .nav-pills .nav-link.active:hover {
+    background-color: var(--primary-red-hover);
+    color: #ffffff !important;
+}
+
+/* Dark mode adjustments for Spare Parts tabs */
+[data-theme="dark"] #parts .nav-pills .nav-link {
+    background-color: var(--bg-light);
+    color: var(--text-primary);
+    border-color: var(--border-color);
+    box-shadow: 0 5px 15px var(--shadow);
+}
+
+[data-theme="dark"] #parts .nav-pills .nav-link:hover {
+    color: var(--primary-red);
+}
+
+[data-theme="dark"] #parts .nav-pills .nav-link.active,
+[data-theme="dark"] #parts .nav-pills .nav-link.active:hover {
+    background-color: var(--primary-red);
+    color: #ffffff !important;
+    border-color: var(--primary-red);
 }
 
 /* Hero Section */
@@ -696,26 +766,6 @@ html {
 .parts-card img {
     height: 200px;
     object-fit: cover;
-}
-
-/* Tabs */
-.nav-pills .nav-link {
-    border-radius: 50px;
-    padding: 12px 25px;
-    font-weight: 600;
-    margin: 0 10px;
-    transition: all 0.3s ease;
-}
-
-.nav-pills .nav-link.active {
-    background-color: var(--primary-red);
-    border: none;
-}
-
-/* Feature Icons */
-.feature-icon i {
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
 }
 
 /* Premium Brands Carousel */
@@ -939,8 +989,6 @@ html {
     
 
 }
-
-
 
 /* Testimonial Carousel Controls Styling Only */
 #testimonialCarousel .carousel-control-prev-icon,
@@ -1336,8 +1384,6 @@ footer a.text-muted:hover {
 
 }
 
-
-
 /* Additional Utilities */
 .text-primary-red {
     color: var(--primary-red) !important;
@@ -1350,9 +1396,6 @@ footer a.text-muted:hover {
 .border-primary-red {
     border-color: var(--primary-red) !important;
 }
-
-
-
 
 /* Dark Mode Specific Styles */
 [data-theme="dark"] img:not(.brand-logo):not([src*="hero-background"]) {
