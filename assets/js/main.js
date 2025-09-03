@@ -260,25 +260,44 @@ function initThemeToggle() {
     });
 }
 
-// Preload Critical Resources
+// Preload Critical Resources (gated by connection and deferred)
 function preloadCriticalResources() {
-    const criticalImages = [
-        'assets/images/hero-background.webp',
-        'assets/images/services-workshop.webp',
-        'assets/images/brand-logo.png'
-    ];
-    
-    criticalImages.forEach(src => {
-        const link = document.createElement('link');
-        link.rel = 'preload';
-        link.as = 'image';
-        link.href = src;
-        document.head.appendChild(link);
-    });
+    try {
+        const conn = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+        const effectiveType = conn && conn.effectiveType ? conn.effectiveType : '4g';
+        const saveData = conn && typeof conn.saveData === 'boolean' ? conn.saveData : false;
+
+        // Skip preloading for slow networks or when Data Saver is on
+        if (saveData || effectiveType !== '4g') {
+            return;
+        }
+
+        const criticalImages = [
+            'assets/images/hero-background.webp',
+            'assets/images/services-workshop.webp',
+            'assets/images/brand-logo.png'
+        ];
+
+        criticalImages.forEach(src => {
+            const link = document.createElement('link');
+            link.rel = 'preload';
+            link.as = 'image';
+            link.href = src;
+            document.head.appendChild(link);
+        });
+    } catch (e) {
+        // Fail silently
+    }
 }
 
-// Initialize preloading
-preloadCriticalResources();
+// Initialize preloading after window load (and preferably idle)
+window.addEventListener('load', () => {
+    if ('requestIdleCallback' in window) {
+        requestIdleCallback(preloadCriticalResources, { timeout: 2000 });
+    } else {
+        setTimeout(preloadCriticalResources, 1500);
+    }
+});
 
 // Error Handling
 window.addEventListener('error', function(e) {

@@ -175,6 +175,17 @@ The system architecture prioritizes simplicity, performance, and maintainability
 
 ## Recent Updates
 
+### September 4, 2025
+- **Performance Optimizations**: 
+  - Deferred non-critical scripts with `defer` attribute for faster initial render
+  - Added resource hints with `preconnect` for third-party domains (Google Fonts, CDNJS)
+  - Implemented lazy-loading and async decoding for below-the-fold images
+  - Gated image preloading based on network conditions (4G+ only)
+- **Theme System**: 
+  - Fixed theme initialization to respect system preference without premature localStorage persistence
+  - Explicitly set light theme attributes to prevent CSS media query conflicts
+  - Improved theme toggle behavior for first-time visitors
+
 ### September 3, 2025
 - **Theme System**: Enhanced light/dark mode with system preference detection
 - **Offline Experience**: Implemented theme-aware offline page
