@@ -205,16 +205,15 @@ function initThemeToggle() {
         return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
     };
     
-    // Set theme and update icon
-    const setTheme = (theme) => {
+    // Apply theme and update icon (no persistence)
+    const applyTheme = (theme) => {
         if (theme === 'dark') {
             body.setAttribute('data-theme', 'dark');
             themeIcon.className = 'bi bi-moon-fill';
         } else {
-            body.removeAttribute('data-theme');
+            body.setAttribute('data-theme', 'light');
             themeIcon.className = 'bi bi-sun-fill';
         }
-        localStorage.setItem('theme', theme);
     };
     
     // Toggle theme with simple rotate animation
@@ -226,7 +225,8 @@ function initThemeToggle() {
         themeToggle.classList.add('rotating');
         
         // Change the theme immediately with the rotation
-        setTheme(newTheme);
+        applyTheme(newTheme);
+        localStorage.setItem('theme', newTheme);
         
         // Remove animation class after completion
         setTimeout(() => {
@@ -236,7 +236,7 @@ function initThemeToggle() {
     
     // Initialize theme on load
     const preferredTheme = getPreferredTheme();
-    setTheme(preferredTheme);
+    applyTheme(preferredTheme);
     
     // Add click event listener with enhanced visual feedback
     themeToggle.addEventListener('click', (e) => {
@@ -255,7 +255,7 @@ function initThemeToggle() {
     // Listen for system theme changes
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
         if (!localStorage.getItem('theme')) {
-            setTheme(e.matches ? 'dark' : 'light');
+            applyTheme(e.matches ? 'dark' : 'light');
         }
     });
 }
