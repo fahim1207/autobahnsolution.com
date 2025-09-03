@@ -612,6 +612,31 @@ html {
     color: #ffffff !important;
 }
 
+/* Wholesale list legibility: ensure clear contrast in both themes */
+#wholesale .list-unstyled li {
+    color: var(--text-dark);
+}
+
+/* Dark mode: brighter text and success icon for better contrast */
+[data-theme="dark"] #wholesale .list-unstyled li {
+    color: #e1e1e1 !important;
+}
+
+[data-theme="dark"] #wholesale .text-success {
+    color: #2ecc71 !important; /* higher-contrast green on dark bg */
+}
+
+/* Also ensure the wholesale heading and paragraph have solid contrast */
+#wholesale h3,
+#wholesale p.lead {
+    color: var(--text-dark);
+}
+
+[data-theme="dark"] #wholesale h3,
+[data-theme="dark"] #wholesale p.lead {
+    color: #e1e1e1 !important;
+}
+
 /* Dark mode adjustments for Spare Parts tabs */
 [data-theme="dark"] #parts .nav-pills .nav-link {
     background-color: var(--bg-light);
