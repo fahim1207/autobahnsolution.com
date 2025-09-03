@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize all functionality
     initScrollReveal();
     initSmoothScrolling();
-    initContactForm();
     initNavbarAnimation();
     initBrandsMarquee();
     initTypewriter();
@@ -81,111 +80,6 @@ function initSmoothScrolling() {
     });
 }
 
-// Contact Form Handling
-function initContactForm() {
-    const contactForm = document.getElementById('contactForm');
-    
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(this);
-            const formObject = {};
-            
-            formData.forEach((value, key) => {
-                formObject[key] = value;
-            });
-            
-            // Validate required fields
-            if (!formObject.name || !formObject.phone || !formObject.service) {
-                showAlert('Please fill in all required fields.', 'danger');
-                return;
-            }
-            
-            // Validate phone number
-            const phoneRegex = /^[+]?[\d\s\-\(\)]+$/;
-            if (!phoneRegex.test(formObject.phone)) {
-                showAlert('Please enter a valid phone number.', 'danger');
-                return;
-            }
-            
-            // Validate email if provided
-            if (formObject.email && !isValidEmail(formObject.email)) {
-                showAlert('Please enter a valid email address.', 'danger');
-                return;
-            }
-            
-            // Simulate form submission
-            submitForm(formObject);
-        });
-    }
-}
-
-// Form Submission (Dummy endpoint)
-function submitForm(formData) {
-    const submitBtn = document.querySelector('#contactForm button[type="submit"]');
-    const originalText = submitBtn.innerHTML;
-    
-    // Show loading state
-    submitBtn.innerHTML = '<i class="bi bi-hourglass-split me-2"></i>Sending...';
-    submitBtn.disabled = true;
-    
-    // Simulate API call
-    setTimeout(() => {
-        // In a real application, this would be an actual API call
-        console.log('Form submitted:', formData);
-        
-        // Show success message
-        showAlert('Thank you! Your message has been sent successfully. We will contact you soon.', 'success');
-        
-        // Reset form
-        document.getElementById('contactForm').reset();
-        
-        // Reset button
-        submitBtn.innerHTML = originalText;
-        submitBtn.disabled = false;
-        
-        // Track conversion (for analytics)
-        trackFormSubmission(formData.service);
-        
-    }, 1500);
-}
-
-// Show Alert Messages
-function showAlert(message, type) {
-    // Remove existing alerts
-    const existingAlert = document.querySelector('.alert-message');
-    if (existingAlert) {
-        existingAlert.remove();
-    }
-    
-    // Create new alert
-    const alertDiv = document.createElement('div');
-    alertDiv.className = `alert alert-${type} alert-dismissible fade show alert-message`;
-    alertDiv.innerHTML = `
-        ${message}
-        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-    `;
-    
-    // Insert after form
-    const form = document.getElementById('contactForm');
-    form.parentNode.insertBefore(alertDiv, form.nextSibling);
-    
-    // Auto remove after 5 seconds
-    setTimeout(() => {
-        if (alertDiv && alertDiv.parentNode) {
-            alertDiv.remove();
-        }
-    }, 5000);
-}
-
-// Email Validation
-function isValidEmail(email) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-}
-
 // Navbar Animation on Scroll
 function initNavbarAnimation() {
     const navbar = document.querySelector('.navbar');
@@ -250,25 +144,6 @@ function initTypewriter() {
                 clearInterval(typeInterval);
             }
         }, 50);
-    }
-}
-
-// Track Form Submissions (for analytics)
-function trackFormSubmission(service) {
-    // Google Analytics tracking (if implemented)
-    if (typeof gtag !== 'undefined') {
-        gtag('event', 'form_submit', {
-            'event_category': 'Contact',
-            'event_label': service,
-            'value': 1
-        });
-    }
-    
-    // Facebook Pixel tracking (if implemented)
-    if (typeof fbq !== 'undefined') {
-        fbq('track', 'Lead', {
-            content_category: service
-        });
     }
 }
 
