@@ -306,8 +306,14 @@ const throttledScroll = throttle(() => {
 
 window.addEventListener('scroll', throttledScroll);
 
-// Service Worker Registration removed for Replit static hosting
-// PWA capabilities not required for this static website
+// Service Worker Registration
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+            .then(() => console.log('Service worker registered'))
+            .catch(err => console.warn('Service worker registration failed', err));
+    });
+}
 
 // Theme Toggle Functionality
 function initThemeToggle() {
@@ -384,7 +390,7 @@ function preloadCriticalResources() {
     const criticalImages = [
         'assets/images/hero-background.webp',
         'assets/images/services-workshop.webp',
-        'assets/images/brand-logo.jpg'
+        'assets/images/brand-logo.png'
     ];
     
     criticalImages.forEach(src => {

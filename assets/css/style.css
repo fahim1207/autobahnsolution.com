@@ -193,6 +193,78 @@ html {
     transition: all 0.3s ease;
 }
 
+/* Custom hamburger icon */
+.navbar-toggler {
+    border: none;
+    padding: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 0.2rem rgba(231, 76, 60, 0.25);
+    outline: none;
+}
+
+.navbar-toggler-icon {
+    background-image: none !important;
+    position: relative;
+    width: 20px;
+    height: 14px; /* Reduced height to make gaps more consistent */
+    background-color: transparent !important;
+    transition: all 0.3s ease;
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.85);
+    left: 0;
+    transition: all 0.3s ease;
+}
+
+.navbar-toggler-icon::before {
+    top: 0;
+    box-shadow: 0 6px 0 rgba(255, 255, 255, 0.85);
+}
+
+.navbar-toggler-icon::after {
+    bottom: 0;
+}
+
+/* Transform to X when expanded */
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+    background-color: transparent !important;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
+    top: 9px;
+    transform: rotate(45deg);
+    box-shadow: none;
+    background-color: rgba(255, 255, 255, 0.85);
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
+    bottom: 9px;
+    transform: rotate(-45deg);
+    background-color: rgba(255, 255, 255, 0.85);
+}
+
+/* Dark theme adjustments */
+[data-theme="dark"] .navbar-toggler {
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .navbar-toggler-icon::before,
+[data-theme="dark"] .navbar-toggler-icon::after {
+    background-color: rgba(255, 255, 255, 0.85);
+}
+
+[data-theme="dark"] .navbar-toggler-icon::before {
+    box-shadow: 0 6px 0 rgba(255, 255, 255, 0.85);
+}
 
 /* Theme Toggle Styles */
 .theme-toggle {
@@ -276,61 +348,14 @@ html {
     letter-spacing: 0.5px;
 }
 
-
-
+/* Mobile navbar adjustments */
 @media (max-width: 768px) {
     .navbar-title {
         font-size: 1.1rem;
     }
     
-    /* Mobile navbar adjustments */
     .navbar .container {
         position: relative;
-    }
-    
-    
-
-    
-    /* Custom hamburger icon */
-    .navbar-toggler-icon {
-        background-image: none !important;
-        position: relative;
-        width: 20px;
-        height: 16px;
-        background-color: transparent !important;
-    }
-    
-    .navbar-toggler-icon::before,
-    .navbar-toggler-icon::after {
-        content: '';
-        position: absolute;
-        width: 20px;
-        height: 2px;
-        background-color: rgba(255, 255, 255, 0.85);
-        transition: all 0.3s ease;
-        border-radius: 1px;
-        left: 0;
-    }
-    
-    .navbar-toggler-icon::before {
-        top: 0;
-        box-shadow: 0 7px 0 rgba(255, 255, 255, 0.85);
-    }
-    
-    .navbar-toggler-icon::after {
-        bottom: 0;
-    }
-    
-    /* Transform to X when expanded */
-    .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
-        top: 7px;
-        transform: rotate(45deg);
-        box-shadow: none;
-    }
-    
-    .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
-        bottom: 7px;
-        transform: rotate(-45deg);
     }
     
     .navbar-brand {

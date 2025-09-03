@@ -1,4 +1,4 @@
-# Autobahn Solutions - One Page Landing Website
+# Autobahn Solutions Ltd - One Page Landing Website
 
 ## Overview
 
@@ -10,6 +10,8 @@ Preferred communication style: Simple, everyday language.
 Typography preferences: Minimal, clean fonts with lighter weights for better background image visibility.
 
 ## System Architecture
+
+The system architecture prioritizes simplicity, performance, and maintainability while delivering a professional automotive industry presence with modern web standards and user experience best practices.
 
 ### Frontend Architecture
 - **Single Page Application (SPA)**: One-page scrollable layout with smooth navigation
@@ -30,6 +32,7 @@ Typography preferences: Minimal, clean fonts with lighter weights for better bac
 - Smooth scrolling navigation between sections
 - Responsive collapse menu for mobile devices
 - Brand identity with automotive-themed iconography
+- [Theme](#3-theme-system) toggle button
 
 ### 2. Hero Section
 - Full-screen background with overlay for visual impact
@@ -37,17 +40,53 @@ Typography preferences: Minimal, clean fonts with lighter weights for better bac
 - Animated text reveals for enhanced user engagement
 - Dual CTA strategy: "Book Service" and "Browse Parts"
 
-### 3. Content Sections
+### 3. Theme System
+- **Light/Dark Mode**: System preference detection with manual override
+- **Theme Persistence**: User preference saved in localStorage
+- **Smooth Transitions**: CSS transitions for theme switching
+- **Theme-Aware Components**: UI elements adapt to current theme
+- **Accessible Toggle**: Keyboard-navigable with proper ARIA labels
+
+### 4. Content Sections
 - About Us: Company credibility and experience highlights
 - Services: Premium automotive service offerings
 - Parts: Genuine and aftermarket spare parts catalog
-- Contact: Multi-channel contact information and inquiry form
+- Contact: Direct contact via phone, email, and WhatsApp
 
-### 4. Interactive Features
+### 5. Interactive Features
 - Scroll reveal animations using Intersection Observer API
 - Lazy loading for performance optimization
-- Contact form with client-side validation
+- Direct contact methods (click-to-call, email, WhatsApp)
+- Responsive image loading with proper aspect ratios
+- Touch-optimized interactive elements
 - Typewriter effect for dynamic text display
+
+## [Progressive Web App (PWA)](https://web.dev/learn/pwa/progressive-web-apps/) Implementation
+
+### Core PWA Features
+- **Service Worker**: Network-first strategy with offline fallback
+- **Web App Manifest**: Configured with proper app metadata and theming
+- **Offline Support**: Custom offline page with theme awareness
+- **Installability**: Meets Chrome PWA installation criteria
+- **Asset Caching**: Core assets cached for reliable offline experience
+
+### Performance Optimizations
+- **Critical Resource Preloading**: Key assets preloaded for faster rendering
+- **Lazy Loading**: Non-critical resources loaded on demand
+- **Efficient Caching**: Smart cache management with versioning
+- **Minimal Dependencies**: Lightweight implementation without unnecessary libraries
+
+### Offline Experience
+- **Custom Offline Page**: Themed to match user preferences
+- **Service Worker Fallback**: Graceful degradation when offline
+- **Asset Precaching**: Core UI components available offline
+- **Network Resilience**: Handles flaky connections gracefully
+
+### Icons & Assets
+- **Responsive Icons**: Multiple sizes for various devices (16px to 512px)
+- **Maskable Icons**: Optimized for Android home screen
+- **Apple Touch Icons**: Properly sized for iOS devices
+- **Favicon**: Multi-format support (PNG, ICO, SVG)
 
 ## Data Flow
 
@@ -55,13 +94,37 @@ Typography preferences: Minimal, clean fonts with lighter weights for better bac
 1. **Initial Load**: HTML, CSS, and JavaScript assets loaded from CDN and local files
 2. **Progressive Enhancement**: JavaScript adds interactive features after DOM load
 3. **Animation Triggers**: Intersection Observer monitors scroll position for reveal animations
-4. **Form Handling**: Client-side validation and submission preparation
 
 ### User Interaction Flow
 1. User lands on hero section with primary messaging
 2. Smooth scroll navigation guides through service offerings
 3. Interactive elements provide engagement without page reloads
-4. Contact form captures leads with immediate validation feedback
+4. Direct contact options (phone, email, WhatsApp) for immediate communication
+
+## Contact Methods
+
+### Phone Support
+- **Direct Call**: Click-to-call functionality for mobile users
+- **Business Hours**: Sunday - Thursday, 9:00 AM - 6:00 PM
+- **Primary Contact**: +880 1734-205682
+
+### Email Communication
+- **Direct Email**: [fahim@autobahnsolution.com](mailto:fahim@autobahnsolution.com)
+- **Response Time**: Typically within 24 business hours
+
+### WhatsApp Messaging
+- **Direct Chat**: Quick communication for service inquiries
+- **Business Hours Support**: Available during working hours
+
+### Physical Location
+- **Address**: 22 Tejgaon I/A, Kuni para, Happy Homes, Dhaka 1208
+- **Map Integration**: Interactive Google Maps for easy navigation
+
+### Social Media
+- **Facebook**: Direct messaging via Facebook
+- **Instagram**: Visual updates and DMs
+- **YouTube**: Shorts video content and tutorials
+- **LinkedIn**: Professional networking
 
 ## External Dependencies
 
@@ -91,8 +154,10 @@ Typography preferences: Minimal, clean fonts with lighter weights for better bac
 ### Static Hosting Approach
 - **File Structure**: Simple directory structure with separated concerns
   - `index.html`: Main page markup
-  - `css/style.css`: Custom styling
-  - `js/main.js`: Interactive functionality
+  - `assets/css/style.css`: Custom styling
+  - `assets/js/main.js`: Interactive functionality
+  - `assets/icons`: Icon files (PWA compliant)
+  - `assets/images`: Static images (jpg, png, WebP, SVG formats)
 - **CDN Dependencies**: External resources loaded from reliable CDNs
 - **Performance Optimization**: Minimal local assets, lazy loading implementation
 
@@ -108,17 +173,19 @@ Typography preferences: Minimal, clean fonts with lighter weights for better bac
 - Mobile-responsive across all device sizes
 - Progressive enhancement ensures core functionality without JavaScript
 
-The architecture prioritizes simplicity, performance, and maintainability while delivering a professional automotive industry presence with modern web standards and user experience best practices.
+## Recent Updates
 
-## Recent Changes
+### September 3, 2025
+- **Theme System**: Enhanced light/dark mode with system preference detection
+- **Offline Experience**: Implemented theme-aware offline page
+- **Performance**: Optimized service worker for better caching strategy
+- **Icons**: Updated favicon and app icons with new ASL branding
 
 ### September 2, 2025
-- **Simplified Theme Switcher Animation**: Replaced swirl animation with clean rotate-in-place effect for theme toggle
-- **Enhanced Mobile Hamburger Menu**: Fixed positioning to stay in place and added smooth hamburger-to-X transformation animation
-- **Custom Hamburger Icon**: Implemented CSS-based hamburger lines that animate into an X when menu is opened
-- **Improved Mobile UX**: Hamburger button now remains fixed at the top-right position during menu transitions
-- **Maintained Theme Functionality**: Preserved light/dark mode toggle with system preference detection and localStorage persistence
-- **Realistic Icon Colors**: Kept golden sun icon (#ffd700) and ghost white moon icon (#f8f8ff) with proper hover states
+- **Simplified Theme Switcher**: Clean rotate-in-place animation for theme toggle
+- **Mobile Menu**: Enhanced hamburger menu with smooth animations
+- **Theme Persistence**: Maintained user preference across sessions
+- **Icon Colors**: Optimized sun/moon icons with proper hover states
 
 ### August 23, 2025
 - **Modern Brands Marquee**: Replaced static carousel with auto-scrolling marquee component inspired by GitHub homepage
