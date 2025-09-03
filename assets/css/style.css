@@ -522,6 +522,37 @@ html {
   }
 }
 
+/* Fix collapsed mobile navbar layout on very narrow widths */
+@media (max-width: 991.98px) { /* matches navbar-expand-lg collapse */
+  /* Prevent right-anchoring from .ms-auto on mobile */
+  .navbar .navbar-collapse .navbar-nav.ms-auto { margin-left: 0 !important; }
+
+  /* Make menu vertical, full-width, and left-aligned */
+  .navbar .navbar-collapse .navbar-nav {
+    align-items: flex-start !important;
+    width: 100%;
+  }
+  .navbar .navbar-collapse .navbar-nav .nav-item { width: 100%; }
+  .navbar .navbar-collapse .navbar-nav .nav-link {
+    width: 100%;
+    text-align: left;
+    padding-right: 1rem;
+  }
+
+  /* Theme toggle: keep as last item, align to bottom-right of list safely */
+  .navbar .navbar-collapse .navbar-nav .nav-item:last-child {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+  }
+  .navbar .navbar-collapse .navbar-nav .nav-item:last-child .theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.25rem 0.5rem;
+  }
+}
+
 /* Additional tablet adjustments */
 @media (max-width: 992px) and (min-width: 769px) {
     .hero-section {
