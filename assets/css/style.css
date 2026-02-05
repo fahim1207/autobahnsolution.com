@@ -971,7 +971,7 @@ html {
 }
 
 .brand-logo-item .brand-logo {
-    max-height: 50px;
+    max-height: 60px;
     max-width: 120px;
     width: auto;
     height: auto;
@@ -979,37 +979,6 @@ html {
     object-position: center;
     filter: grayscale(20%) contrast(1.1) brightness(0.95);
     transition: all 0.3s ease;
-}
-
-/* Individual logo size adjustments for uniform appearance */
-.brand-logo-item .brand-logo[src*="bmw-logo"] {
-    max-height: 45px;
-    max-width: 45px;
-}
-
-.brand-logo-item .brand-logo[src*="honda-logo"] {
-    max-height: 35px;
-    max-width: 110px;
-}
-
-.brand-logo-item .brand-logo[src*="landrover-logo"] {
-    max-height: 40px;
-    max-width: 110px;
-}
-
-.brand-logo-item .brand-logo[src*="lexus-logo"] {
-    max-height: 40px;
-    max-width: 100px;
-}
-
-.brand-logo-item .brand-logo[src*="mercedes-logo"] {
-    max-height: 45px;
-    max-width: 45px;
-}
-
-.brand-logo-item .brand-logo[src*="toyota-logo"] {
-    max-height: 45px;
-    max-width: 45px;
 }
 
 .brand-logo-item:hover .brand-logo {
@@ -1040,15 +1009,8 @@ html {
     }
     
     .brand-logo-item .brand-logo {
-        max-height: 40px;
-        max-width: 100px;
-    }
-    
-    .brand-logo-item .brand-logo[src*="bmw-logo"],
-    .brand-logo-item .brand-logo[src*="mercedes-logo"],
-    .brand-logo-item .brand-logo[src*="toyota-logo"] {
-        max-height: 35px;
-        max-width: 35px;
+        max-height: 45px;
+        max-width: 90px;
     }
 }
 
@@ -1070,17 +1032,9 @@ html {
     }
     
     .brand-logo-item .brand-logo {
-        max-height: 32px;
-        max-width: 80px;
+        max-height: 38px;
+        max-width: 70px;
     }
-    
-    .brand-logo-item .brand-logo[src*="bmw-logo"],
-    .brand-logo-item .brand-logo[src*="mercedes-logo"],
-    .brand-logo-item .brand-logo[src*="toyota-logo"] {
-        max-height: 28px;
-        max-width: 28px;
-    }
-    
 
 }
 
