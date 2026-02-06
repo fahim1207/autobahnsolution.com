@@ -346,3 +346,61 @@ function initFAB() {
 
 // Initialize FAB when DOM is loaded
 // Note: FAB is already initialized in the main DOMContentLoaded listener above
+
+// Service Packages Carousel with Preview Effect
+function initServicePackagesCarousel() {
+    const carousel = document.getElementById('servicePackagesCarousel');
+    if (!carousel) return;
+
+    const items = carousel.querySelectorAll('.carousel-item');
+    const totalItems = items.length;
+
+    function updatePreviews() {
+        const activeItem = carousel.querySelector('.carousel-item.active');
+        if (!activeItem) return;
+
+        const activeIndex = Array.from(items).indexOf(activeItem);
+        const prevIndex = (activeIndex - 1 + totalItems) % totalItems;
+        const nextIndex = (activeIndex + 1) % totalItems;
+
+        // Remove existing preview elements
+        carousel.querySelectorAll('.service-preview').forEach(el => el.remove());
+
+        // Get the container for the active item
+        const container = activeItem.querySelector('.position-relative');
+        if (!container) return;
+
+        // Get images
+        const prevImg = items[prevIndex].querySelector('img');
+        const nextImg = items[nextIndex].querySelector('img');
+
+        if (prevImg && nextImg) {
+            // Create previous preview
+            const prevPreview = document.createElement('div');
+            prevPreview.className = 'service-preview service-preview-left';
+            prevPreview.innerHTML = `<img src="${prevImg.src}" alt="${prevImg.alt}">`;
+            container.appendChild(prevPreview);
+
+            // Create next preview
+            const nextPreview = document.createElement('div');
+            nextPreview.className = 'service-preview service-preview-right';
+            nextPreview.innerHTML = `<img src="${nextImg.src}" alt="${nextImg.alt}">`;
+            container.appendChild(nextPreview);
+        }
+    }
+
+    // Initial setup
+    updatePreviews();
+
+    // Update on slide
+    carousel.addEventListener('slide.bs.carousel', function() {
+        setTimeout(updatePreviews, 100);
+    });
+}
+
+// Initialize service packages carousel
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initServicePackagesCarousel);
+} else {
+    initServicePackagesCarousel();
+}

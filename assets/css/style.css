@@ -1478,3 +1478,297 @@ footer a.text-muted:hover {
 [data-theme="dark"] .shadow-sm {
     box-shadow: 0 .125rem .25rem var(--shadow) !important;
 }
+
+/* Service Packages Carousel Styles */
+#servicePackagesCarousel {
+    position: relative;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+@media (min-width: 768px) {
+    #servicePackagesCarousel {
+        overflow: visible;
+    }
+}
+
+#servicePackagesCarousel .carousel-inner {
+    overflow: visible;
+    position: relative;
+}
+
+#servicePackagesCarousel .carousel-item {
+    padding: 0 20%;
+    transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+}
+
+.service-package-main {
+    display: block;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-package-main:hover {
+    transform: scale(1.02);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.25);
+}
+
+.service-package-main img {
+    width: 100%;
+    height: auto;
+    max-height: 600px;
+    object-fit: contain;
+    display: block;
+    background-color: #f8f9fa;
+    cursor: pointer;
+}
+
+/* Navigation Buttons - Match Testimonials Style */
+#servicePackagesCarousel .carousel-control-prev,
+#servicePackagesCarousel .carousel-control-next {
+    width: 5%;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+
+#servicePackagesCarousel .carousel-control-prev:hover,
+#servicePackagesCarousel .carousel-control-next:hover {
+    opacity: 1;
+}
+
+#servicePackagesCarousel .carousel-control-prev:hover .carousel-control-prev-icon,
+#servicePackagesCarousel .carousel-control-next:hover .carousel-control-next-icon {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+#servicePackagesCarousel .carousel-control-prev:active .carousel-control-prev-icon,
+#servicePackagesCarousel .carousel-control-next:active .carousel-control-next-icon {
+    transform: scale(0.9);
+}
+
+#servicePackagesCarousel .carousel-control-prev-icon,
+#servicePackagesCarousel .carousel-control-next-icon {
+    background: none;
+    border: none;
+    width: 30px;
+    height: 30px;
+    opacity: 0.6;
+}
+
+#servicePackagesCarousel .carousel-control-prev-icon:before,
+#servicePackagesCarousel .carousel-control-next-icon:before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-red);
+}
+
+#servicePackagesCarousel .carousel-control-prev-icon:before {
+    mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z'/%3e%3c/svg%3e");
+}
+
+#servicePackagesCarousel .carousel-control-next-icon:before {
+    mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z'/%3e%3c/svg%3e");
+}
+
+/* Carousel Indicators */
+#servicePackagesCarousel .carousel-indicators {
+    margin-bottom: -30px;
+}
+
+#servicePackagesCarousel .carousel-indicators button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+#servicePackagesCarousel .carousel-indicators button.active {
+    background-color: var(--primary-red);
+    transform: scale(1.2);
+}
+
+/* Fade animation */
+#servicePackagesCarousel.carousel-fade .carousel-item {
+    opacity: 0;
+    transition-duration: 0.8s;
+    transition-property: opacity, transform;
+}
+
+#servicePackagesCarousel.carousel-fade .carousel-item.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+#servicePackagesCarousel.carousel-fade .carousel-item-next.carousel-item-start,
+#servicePackagesCarousel.carousel-fade .carousel-item-prev.carousel-item-end {
+    opacity: 1;
+}
+
+#servicePackagesCarousel.carousel-fade .active.carousel-item-start,
+#servicePackagesCarousel.carousel-fade .active.carousel-item-end {
+    opacity: 0;
+    transform: scale(0.95);
+}
+
+/* Service Preview Cards (Previous/Next) - Bigger and closer */
+.service-preview {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50%;
+    max-width: 450px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: -1;
+}
+
+.service-preview img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+    background-color: #f8f9fa;
+    transition: all 0.3s ease;
+}
+
+.service-preview-left {
+    left: -25%;
+    transform: translateY(-50%) scale(0.7);
+    animation: slideInLeft 0.6s ease forwards;
+}
+
+@keyframes slideInLeft {
+    0% {
+        opacity: 0;
+        transform: translateY(-50%) scale(0.5) translateX(-50px);
+    }
+    100% {
+        opacity: 0.55;
+        transform: translateY(-50%) scale(0.7);
+    }
+}
+
+.service-preview-right {
+    right: -25%;
+    transform: translateY(-50%) scale(0.7);
+    animation: slideInRight 0.6s ease forwards;
+}
+
+@keyframes slideInRight {
+    0% {
+        opacity: 0;
+        transform: translateY(-50%) scale(0.5) translateX(50px);
+    }
+    100% {
+        opacity: 0.55;
+        transform: translateY(-50%) scale(0.7);
+    }
+}
+
+.service-preview:hover img {
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+    transform: scale(1.02);
+}
+
+/* Dark mode adjustments for carousel */
+[data-theme="dark"] .service-package-main img,
+[data-theme="dark"] .service-preview img {
+    background-color: #2c3034;
+}
+
+/* Tablet and below */
+@media (max-width: 991px) {
+    .service-package-main img {
+        max-height: 500px;
+    }
+    
+    #servicePackagesCarousel .carousel-item {
+        padding: 0 10%;
+    }
+    
+    #servicePackagesCarousel .carousel-control-prev-icon,
+    #servicePackagesCarousel .carousel-control-next-icon {
+        width: 25px;
+        height: 25px;
+    }
+    
+    /* Adjust preview cards on tablets */
+    .service-preview {
+        width: 45%;
+        max-width: 350px;
+    }
+    
+    .service-preview-left {
+        left: -22%;
+    }
+    
+    .service-preview-right {
+        right: -22%;
+    }
+    
+    @keyframes slideInLeft {
+        100% {
+            opacity: 0.5;
+            transform: translateY(-50%) scale(0.7);
+        }
+    }
+    
+    @keyframes slideInRight {
+        100% {
+            opacity: 0.5;
+            transform: translateY(-50%) scale(0.7);
+        }
+    }
+}
+
+/* Mobile devices */
+@media (max-width: 767px) {
+    .service-package-main img {
+        max-height: 400px;
+    }
+    
+    #servicePackagesCarousel .carousel-item {
+        padding: 0 5%;
+    }
+    
+    #servicePackagesCarousel .carousel-control-prev,
+    #servicePackagesCarousel .carousel-control-next {
+        width: 8%;
+    }
+    
+    /* Hide preview cards on mobile */
+    .service-preview {
+        display: none;
+    }
+}
+
+/* Small mobile devices */
+@media (max-width: 575px) {
+    .service-package-main img {
+        max-height: 300px;
+    }
+    
+    #servicePackagesCarousel .carousel-item {
+        padding: 0 2%;
+    }
+    
+    #servicePackagesCarousel .carousel-control-prev,
+    #servicePackagesCarousel .carousel-control-next {
+        width: 10%;
+    }
+    
+    #servicePackagesCarousel .carousel-control-prev-icon,
+    #servicePackagesCarousel .carousel-control-next-icon {
+        width: 20px;
+        height: 20px;
+    }
+}
