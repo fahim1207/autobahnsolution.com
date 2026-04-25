@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemap.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <url>
+    <loc>https://autobahnsolution.com/</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!--
+    Add the following URLs as you build out the architecture (Week 3 of plan).
+    Until each page is live, leave them commented out so the sitemap stays clean.
+
+  <url><loc>https://autobahnsolution.com/services/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://autobahnsolution.com/services/bmw-repair-dhaka</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://autobahnsolution.com/services/mercedes-service-dhaka</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://autobahnsolution.com/services/audi-repair-dhaka</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://autobahnsolution.com/services/ecu-diagnostics</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://autobahnsolution.com/services/electrical-fault-diagnosis</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://autobahnsolution.com/services/hybrid-battery-repair</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://autobahnsolution.com/locations/gulshan</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://autobahnsolution.com/locations/banani</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://autobahnsolution.com/locations/uttara</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://autobahnsolution.com/locations/dhanmondi</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://autobahnsolution.com/locations/baridhara</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://autobahnsolution.com/about</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://autobahnsolution.com/contact</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://autobahnsolution.com/blog/</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  -->
+
+</urlset>

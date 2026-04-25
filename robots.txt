@@ -1,0 +1,21 @@
+# Autobahn Solutions Ltd - https://autobahnsolution.com
+User-agent: *
+Allow: /
+Disallow: /offline.html
+Disallow: /sw.js
+
+# Common AI / scraper bots - allowed (change to Disallow if you want to block)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+# Sitemap
+Sitemap: https://autobahnsolution.com/sitemap.xml
