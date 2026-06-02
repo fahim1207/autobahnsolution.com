@@ -2,98 +2,54 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
-  <url>
-    <loc>https://autobahnsolution.com/</loc>
-    <lastmod>2026-06-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
+  <url><loc>https://autobahnsolution.com/</loc><lastmod>2026-06-03</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
 
-  <!-- Services -->
-  <url>
-    <loc>https://autobahnsolution.com/services/</loc>
-    <lastmod>2026-06-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://autobahnsolution.com/services/bmw-repair-dhaka/</loc>
-    <lastmod>2026-06-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://autobahnsolution.com/services/mercedes-benz-repair-dhaka/</loc>
-    <lastmod>2026-06-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://autobahnsolution.com/services/audi-repair-dhaka/</loc>
-    <lastmod>2026-06-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://autobahnsolution.com/services/car-diagnostics-dhaka/</loc>
-    <lastmod>2026-06-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://autobahnsolution.com/services/ecu-coding-programming-dhaka/</loc>
-    <lastmod>2026-06-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+  <!-- Pillar services -->
+  <url><loc>https://autobahnsolution.com/services/</loc><lastmod>2026-06-03</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://autobahnsolution.com/services/bmw-repair-dhaka/</loc><lastmod>2026-06-03</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://autobahnsolution.com/services/mercedes-benz-repair-dhaka/</loc><lastmod>2026-06-03</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://autobahnsolution.com/services/audi-repair-dhaka/</loc><lastmod>2026-06-03</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://autobahnsolution.com/services/car-diagnostics-dhaka/</loc><lastmod>2026-06-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://autobahnsolution.com/services/ecu-coding-programming-dhaka/</loc><lastmod>2026-06-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <!-- High-intent service spokes -->
+  <url><loc>https://autobahnsolution.com/bmw-diagnostics-dhaka/</loc><lastmod>2026-06-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://autobahnsolution.com/bmw-suspension-repair-dhaka/</loc><lastmod>2026-06-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://autobahnsolution.com/bmw-engine-repair-dhaka/</loc><lastmod>2026-06-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://autobahnsolution.com/mercedes-diagnostics-dhaka/</loc><lastmod>2026-06-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://autobahnsolution.com/mercedes-suspension-repair-dhaka/</loc><lastmod>2026-06-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://autobahnsolution.com/mercedes-sbc-repair-dhaka/</loc><lastmod>2026-06-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://autobahnsolution.com/audi-diagnostics-dhaka/</loc><lastmod>2026-06-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://autobahnsolution.com/hybrid-battery-repair-dhaka/</loc><lastmod>2026-06-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://autobahnsolution.com/prius-hybrid-battery-repair-dhaka/</loc><lastmod>2026-06-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://autobahnsolution.com/car-ac-repair-dhaka/</loc><lastmod>2026-06-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <!-- Location pages -->
+  <url><loc>https://autobahnsolution.com/car-repair-tejgaon/</loc><lastmod>2026-06-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://autobahnsolution.com/car-repair-gulshan/</loc><lastmod>2026-06-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://autobahnsolution.com/car-repair-banani/</loc><lastmod>2026-06-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://autobahnsolution.com/car-repair-uttara/</loc><lastmod>2026-06-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Case studies -->
+  <url><loc>https://autobahnsolution.com/case-studies/</loc><lastmod>2026-06-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://autobahnsolution.com/case-studies/bmw-drivetrain-malfunction-diagnosis/</loc><lastmod>2026-06-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://autobahnsolution.com/case-studies/mercedes-air-suspension-repair/</loc><lastmod>2026-06-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://autobahnsolution.com/case-studies/audi-bcm2-diagnosis/</loc><lastmod>2026-06-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://autobahnsolution.com/case-studies/prius-p0aa6-leak-detection/</loc><lastmod>2026-06-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
 
   <!-- Company -->
-  <url>
-    <loc>https://autobahnsolution.com/about/</loc>
-    <lastmod>2026-06-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://autobahnsolution.com/faq/</loc>
-    <lastmod>2026-06-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://autobahnsolution.com/contact/</loc>
-    <lastmod>2026-06-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
+  <url><loc>https://autobahnsolution.com/about/</loc><lastmod>2026-06-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://autobahnsolution.com/faq/</loc><lastmod>2026-06-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://autobahnsolution.com/contact/</loc><lastmod>2026-06-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
 
   <!--
-    Add the following as each page goes live (see docs/seo/03-site-architecture.md):
-
-    Service / brand pages:
-      /services/porsche-repair-dhaka/
-      /services/land-rover-repair-dhaka/
-      /services/toyota-hybrid-service-dhaka/
-      /services/auto-electrical-repair-dhaka/
-      /services/hybrid-battery-repair-dhaka/
-      /services/pre-purchase-inspection-dhaka/
-      /services/scheduled-maintenance-dhaka/
-      /services/jaguar-repair-dhaka/  /services/volvo-repair-dhaka/
-      /services/volkswagen-repair-dhaka/  /services/lexus-repair-dhaka/
-      /services/engine-repair-dhaka/  /services/transmission-repair-dhaka/
-      /services/suspension-repair-dhaka/  /services/brake-repair-dhaka/
-      /services/car-ac-repair-dhaka/  /services/key-programming-dhaka/
-      /services/fleet-maintenance-dhaka/
-
-    Location pages:
-      /locations/tejgaon/  /locations/gulshan/  /locations/banani/
-      /locations/baridhara/  /locations/dhanmondi/  /locations/bashundhara/  /locations/uttara/
-
-    Knowledge / blog:
-      /blog/  (+ cluster pages and posts)
-
-    Trust:
-      /privacy/  /terms/
+    Future pages to add when live (see docs/seo/03-site-architecture.md & 13-next-seo-implementation-roadmap.md):
+      /services/porsche-repair-dhaka/  /services/land-rover-repair-dhaka/  /services/toyota-hybrid-service-dhaka/
+      /services/auto-electrical-repair-dhaka/  /services/jaguar-repair-dhaka/  /services/volvo-repair-dhaka/
+      /services/volkswagen-repair-dhaka/  /services/lexus-repair-dhaka/  /services/transmission-repair-dhaka/
+      /services/pre-purchase-inspection-dhaka/  /services/scheduled-maintenance-dhaka/  /services/fleet-maintenance-dhaka/
+      /car-repair-baridhara/  /car-repair-dhanmondi/  /car-repair-bashundhara/
+      /blog/  (+ posts)   /privacy/   /terms/
   -->
 
 </urlset>
