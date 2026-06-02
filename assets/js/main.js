@@ -9,7 +9,28 @@ document.addEventListener('DOMContentLoaded', function() {
     initTypewriter();
     initFAB();
     initThemeToggle();
+    initLeadTracking();
 });
+
+// Lead-conversion tracking -> GA4
+// Fires a `generate_lead` event when a visitor clicks WhatsApp, call, or email.
+// Mark `generate_lead` as a key event in GA4 to measure leads from organic/maps.
+// See docs/seo/08-technical-seo-audit.md (T11) and docs/seo/11-page-briefs.md (§4b).
+function initLeadTracking() {
+    var fire = function (method) {
+        if (typeof window.gtag === 'function') {
+            window.gtag('event', 'generate_lead', { method: method });
+        }
+    };
+    var bind = function (selector, method) {
+        document.querySelectorAll(selector).forEach(function (el) {
+            el.addEventListener('click', function () { fire(method); });
+        });
+    };
+    bind('a[href*="wa.me"], a[href*="api.whatsapp.com"]', 'whatsapp');
+    bind('a[href^="tel:"]', 'call');
+    bind('a[href^="mailto:"]', 'email');
+}
 
 // Initialize Brands Marquee
 function initBrandsMarquee() {
