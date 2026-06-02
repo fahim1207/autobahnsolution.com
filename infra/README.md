@@ -12,6 +12,17 @@ canonical form.
 documents automatically, so every folder-based page on this site would 404
 without it. This is a one-time AWS setup — deploy steps are in the file header.
 
+> **TODO(owner): this function is NOT yet deployed.** Until it is attached to the
+> CloudFront distribution (Viewer request event) and published, every clean
+> folder URL — `/services/…/`, `/bmw-diagnostics-dhaka/`, `/car-repair-tejgaon/`,
+> `/case-studies/…/`, `/about/`, `/contact/`, `/faq/` — will return 404 in
+> production.
+>
+> Full attach **runbook + production preflight checklist** (test clean URLs,
+> trailing-slash 301, asset pass-through, sitemap submission) is in
+> [`docs/seo/13-next-seo-implementation-roadmap.md`](../docs/seo/13-next-seo-implementation-roadmap.md)
+> under "CloudFront clean-URL deployment (owner runbook)".
+
 > Note: `*.md` files (including this one) are excluded from the S3 sync by
 > `.github/workflows/main.yml`, so this folder stays internal to the repo.
 > The `.js` function here is **not** auto-deployed either — it is applied
