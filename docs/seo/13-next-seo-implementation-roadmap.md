@@ -67,13 +67,31 @@ This roadmap covers the work that follows the foundation + commercial-core wave 
 
 ## CloudFront clean-URL deployment (owner runbook)
 
-> `TODO(owner)`: this must be performed in AWS — it cannot be done from the repo. Until done, new folder URLs 404 in production.
+> **STATUS (2026-06-03): DONE for this deployment.** The merged viewer-request
+> function in [`infra/cloudfront-subdir-index.js`](../../infra/cloudfront-subdir-index.js)
+> has been **published and associated** to the distribution's **Default (\*)**
+> behavior on the **Viewer request** event. It was tested in the console
+> (`/services/bmw-repair-dhaka/` → `/services/bmw-repair-dhaka/index.html`).
+> The steps below are retained for reference / future changes.
 
-**Attach the function**
-1. AWS Console → **CloudFront → Functions → Create function** (runtime `cloudfront-js-2.0`), name e.g. `autobahn-subdir-index`.
-2. Paste the contents of [`infra/cloudfront-subdir-index.js`](../../infra/cloudfront-subdir-index.js). **Save changes → Publish**.
-3. Open the distribution serving `autobahnsolution.com` → **Behaviors** → edit the default behavior → **Function associations** → Viewer request → choose the function → Save.
-4. Wait for the distribution to redeploy (a few minutes).
+**Final deployed setup (what's live)**
+- **One** viewer-request CloudFront Function on Default (\*), doing three jobs:
+  (1) `www.autobahnsolution.com` → `https://autobahnsolution.com` (301, path preserved),
+  (2) folder URLs → `…/index.html`, (3) extensionless → 301 trailing slash.
+  It pre-existed as a www→apex redirect; the folder logic was **merged into it**
+  (CloudFront allows only one function per event type per behavior).
+- **HTTP → HTTPS** is handled by the behavior's **Viewer protocol policy =
+  "Redirect HTTP to HTTPS"** (a viewer-request function cannot read the scheme),
+  not by the function.
+- `host` is read defensively so the console **Test** event (which may omit the
+  host header) doesn't throw a TypeError.
+
+**Attach / re-publish the function (reference)**
+1. AWS Console → **CloudFront → Functions** → open the existing function (or Create one, runtime `cloudfront-js-2.0`).
+2. Paste the contents of [`infra/cloudfront-subdir-index.js`](../../infra/cloudfront-subdir-index.js). **Save changes → Publish** (associations always use the latest published version).
+3. If not already associated: distribution serving `autobahnsolution.com` → **Behaviors** → edit **Default (\*)** → **Function associations** → **Viewer request** → choose the function → Save. *(Only one function per event type — merge logic rather than adding a second.)*
+4. Confirm **Viewer protocol policy = Redirect HTTP to HTTPS** on the same behavior.
+5. Wait for the distribution to redeploy (a few minutes).
 
 **Production preflight checklist (run after attaching)**
 - [ ] Deploy a throwaway `/_preflight/index.html`; confirm `https://autobahnsolution.com/_preflight/` returns **200** (not 404). Remove it after.

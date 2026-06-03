@@ -11,8 +11,9 @@ Legend: `[x]` done in-repo · `[ ]` pending · `TODO(owner)` requires real busin
 - [x] Add CloudFront attach runbook to doc 13
 - [x] Add production preflight checklist to doc 13
 - [x] Improve `infra/README.md` with deploy + preflight pointers
-- [ ] TODO(owner): attach & publish the CloudFront function in AWS, then run the preflight checklist
-- [ ] TODO(owner): invalidate CloudFront cache (`/*`) after attaching
+- [x] **DONE (2026-06-03):** merged viewer-request function published & associated to Default (*) on Viewer request; console-tested OK
+- [x] **DONE:** HTTP→HTTPS confirmed via Viewer protocol policy (not the function)
+- [ ] TODO(owner): run the live preflight curl checks **after this branch is merged to `main` and deployed to S3** (the new pages only exist in production post-deploy); invalidate CloudFront cache (`/*`) if any stale 404
 
 ## PHASE 2 — EEAT completion
 - [x] Strengthen `/about/`: brands-specialised, quality-control sections; keep schema valid
