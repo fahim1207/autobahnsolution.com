@@ -215,8 +215,11 @@ if ('serviceWorker' in navigator) {
 function initThemeToggle() {
     const themeToggle = document.getElementById('themeToggle');
     const themeIcon = document.getElementById('themeIcon');
-    const body = document.body;
-    
+    const root = document.documentElement;
+    if (!themeToggle || !themeIcon) {
+        return;
+    }
+
     // Get stored theme preference or system preference
     const getPreferredTheme = () => {
         const storedTheme = localStorage.getItem('theme');
@@ -229,17 +232,17 @@ function initThemeToggle() {
     // Apply theme and update icon (no persistence)
     const applyTheme = (theme) => {
         if (theme === 'dark') {
-            body.setAttribute('data-theme', 'dark');
+            root.setAttribute('data-theme', 'dark');
             themeIcon.className = 'bi bi-moon-fill';
         } else {
-            body.setAttribute('data-theme', 'light');
+            root.setAttribute('data-theme', 'light');
             themeIcon.className = 'bi bi-sun-fill';
         }
     };
     
     // Toggle theme with simple rotate animation
     const toggleTheme = () => {
-        const currentTheme = body.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+        const currentTheme = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
         const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
         
         // Add rotate animation class

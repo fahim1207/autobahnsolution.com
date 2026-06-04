@@ -168,6 +168,62 @@ html, body {
     border-color: #e74c3c;
 }
 
+/* Outline-dark buttons would be near-invisible on a dark background — flip to a light outline */
+[data-theme="dark"] .btn-outline-dark {
+    color: #e1e1e1;
+    border-color: #6c757d;
+}
+
+[data-theme="dark"] .btn-outline-dark:hover,
+[data-theme="dark"] .btn-outline-dark:focus,
+[data-theme="dark"] .btn-outline-dark:active {
+    color: #181824;
+    background-color: #e1e1e1;
+    border-color: #e1e1e1;
+}
+
+/* Content hyperlinks: Bootstrap's default link blue is too dark on a dark
+   background. Lift to a lighter, high-contrast blue inside content areas,
+   leaving buttons and intentionally muted/light links untouched. */
+[data-theme="dark"] .content-section a:not(.btn):not(.text-muted):not(.text-light),
+[data-theme="dark"] .article-body a:not(.btn):not(.text-muted):not(.text-light),
+[data-theme="dark"] .card-body a:not(.btn):not(.text-muted):not(.text-light) {
+    color: #7ab3ff;
+}
+
+[data-theme="dark"] .content-section a:not(.btn):not(.text-muted):not(.text-light):hover,
+[data-theme="dark"] .article-body a:not(.btn):not(.text-muted):not(.text-light):hover,
+[data-theme="dark"] .card-body a:not(.btn):not(.text-muted):not(.text-light):hover {
+    color: #a9cdff;
+}
+
+/* FAQ / accordion dropdowns: drive Bootstrap 5.3's accordion CSS variables so
+   background, text, borders and the chevron icon follow the dark scheme. */
+[data-theme="dark"] .accordion {
+    --bs-accordion-bg: #252529;
+    --bs-accordion-color: #e1e1e1;
+    --bs-accordion-border-color: #3c3c41;
+    --bs-accordion-btn-color: #e1e1e1;
+    --bs-accordion-btn-bg: #252529;
+    --bs-accordion-active-color: #ffffff;
+    --bs-accordion-active-bg: #2f2f37;
+    --bs-accordion-btn-focus-border-color: #3c3c41;
+    --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem rgba(231, 76, 60, 0.25);
+    --bs-accordion-body-color: #cfcfcf;
+    --bs-accordion-btn-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23e1e1e1'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+    --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23e74c3c'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+/* Sidebar "Book your … in" card: .sticky-lg-top only sets position:sticky at
+   ≥992px, but Bootstrap's .card is position:relative and the inline top:90px
+   applies at every width — on mobile that shifts the card down 90px and it
+   overlaps the section below. Cancel the offset until the card is actually sticky. */
+@media (max-width: 991.98px) {
+    .card.sticky-lg-top {
+        top: 0 !important;
+    }
+}
+
 body {
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
