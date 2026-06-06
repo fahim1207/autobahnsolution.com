@@ -446,20 +446,19 @@ html {
         padding-top: 50px; /* Smaller navbar on mobile */
         padding-bottom: 100px; /* Increased bottom padding */
         min-height: 100vh; /* Back to standard height */
-        background-attachment: scroll; /* Better performance on mobile */
     }
-    
+
     .hero-section h1 {
-        font-size: 0.33rem !important;
-        line-height: 1.0 !important;
-        font-weight: 300 !important;
-        margin-bottom: 0.3rem !important;
+        font-size: 2.1rem !important;
+        line-height: 1.2 !important;
+        font-weight: 400 !important;
+        margin-bottom: 0.75rem !important;
     }
-    
+
     .hero-section .lead {
-        font-size: 0.75rem !important;
+        font-size: 1rem !important;
         font-weight: 300 !important;
-        margin-bottom: 0.6rem !important;
+        margin-bottom: 1rem !important;
     }
     
     .hero-buttons .btn {
@@ -781,14 +780,27 @@ html {
     min-height: 100vh;
     padding-top: 80px; /* Account for fixed navbar */
     padding-bottom: 50px; /* Increased default bottom padding */
-    background: linear-gradient(rgba(44, 62, 80, 0.6), rgba(220, 53, 69, 0.4)), 
-                url('../images/hero-background.webp');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    background-color: #1a1d21; /* fallback behind the image (prevents flash on orientation change) */
     display: flex;
     align-items: center;
     position: relative;
+    overflow: hidden;
+}
+
+/* Hero background image (art-directed via <picture>, object-fit avoids the
+   iOS/WebKit background-attachment:fixed over-zoom bug on iPad/iPhone) */
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
 }
 
 /* Hero Typography */
@@ -814,12 +826,13 @@ html {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    background: linear-gradient(rgba(44, 62, 80, 0.62), rgba(220, 53, 69, 0.42));
 }
 
 /* Dark mode: stronger hero overlay for better contrast */
 [data-theme="dark"] .hero-overlay {
-    background: rgba(0, 0, 0, 0.5);
+    background: linear-gradient(rgba(10, 12, 18, 0.72), rgba(40, 12, 16, 0.62));
 }
 
 .hero-section .container {
@@ -1409,11 +1422,6 @@ footer a.text-muted:hover {
 @media (max-width: 768px) {
     .hero-section {
         height: 100vh;
-        background-attachment: scroll;
-    }
-    
-    .hero-section h1 {
-        font-size: 2.5rem;
     }
     
     .feature-icon i {
@@ -1827,4 +1835,12 @@ footer a.text-muted:hover {
         width: 20px;
         height: 20px;
     }
+}
+
+/* Figure captions (gallery distribution images) — theme-aware */
+.figure-caption {
+    color: var(--text-secondary);
+}
+[data-theme="dark"] .figure-caption {
+    color: var(--text-secondary);
 }
