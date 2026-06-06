@@ -12,6 +12,9 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          # Need previous commit to diff changed files for IndexNow.
+          fetch-depth: 2
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
@@ -60,3 +63,80 @@ jobs:
             --cli-connect-timeout 60
           
           echo "✅ CloudFront cache invalidation completed successfully"
+
+      - name: Ping IndexNow (Bing / Yandex / Seznam / Naver)
+        env:
+          INDEXNOW_KEY: 5566d5779a0a4c13ff6f0cb8f7656f3d
+          HOST: autobahnsolution.com
+        run: |
+          set -euo pipefail
+
+          # Derive URLs from changed HTML files in this commit range.
+          # Mapping:
+          #   index.html             -> https://HOST/
+          #   path/to/index.html     -> https://HOST/path/to/
+          #   path/to/file.html      -> https://HOST/path/to/file.html  (none today, but supported)
+          # Plus: pings sitemap.xml/robots.txt/llms.txt if those changed.
+          BEFORE="${{ github.event.before }}"
+          AFTER="${{ github.sha }}"
+
+          if [ -z "$BEFORE" ] || [ "$BEFORE" = "0000000000000000000000000000000000000000" ]; then
+            # Initial push or branch creation — fall back to pinging homepage + sitemap.
+            CHANGED=$'index.html\nsitemap.xml'
+          else
+            CHANGED=$(git diff --name-only "$BEFORE" "$AFTER" -- '*.html' 'sitemap.xml' 'robots.txt' 'llms.txt' || true)
+          fi
+
+          if [ -z "$CHANGED" ]; then
+            echo "ℹ️  No HTML/sitemap/robots/llms changes — skipping IndexNow ping."
+            exit 0
+          fi
+
+          # Build JSON url list
+          URLS_JSON=$(printf '%s\n' "$CHANGED" | awk -v host="$HOST" '
+            NF == 0 { next }
+            {
+              p = $0
+              # exact root index
+              if (p == "index.html") { print "https://" host "/" ; next }
+              # nested .../index.html -> directory URL
+              if (p ~ /\/index\.html$/) {
+                sub(/index\.html$/, "", p)
+                print "https://" host "/" p
+                next
+              }
+              # plain top-level files (sitemap.xml, robots.txt, llms.txt, etc.)
+              print "https://" host "/" p
+            }
+          ' | sort -u | jq -R . | jq -s .)
+
+          COUNT=$(echo "$URLS_JSON" | jq 'length')
+          echo "📡 Pinging IndexNow for $COUNT URL(s):"
+          echo "$URLS_JSON" | jq -r '.[]' | sed 's/^/   • /'
+
+          if [ "$COUNT" -eq 0 ]; then
+            echo "ℹ️  No URLs to ping — skipping."
+            exit 0
+          fi
+
+          PAYLOAD=$(jq -n \
+            --arg host "$HOST" \
+            --arg key  "$INDEXNOW_KEY" \
+            --arg loc  "https://$HOST/$INDEXNOW_KEY.txt" \
+            --argjson urls "$URLS_JSON" \
+            '{host: $host, key: $key, keyLocation: $loc, urlList: $urls}')
+
+          # IndexNow expects 200 or 202. 422 = invalid key/host. 400 = bad request.
+          HTTP_CODE=$(curl -sS -o /tmp/indexnow.out -w "%{http_code}" \
+            -X POST "https://api.indexnow.org/indexnow" \
+            -H "Content-Type: application/json; charset=utf-8" \
+            --data "$PAYLOAD")
+
+          echo "↩️  HTTP $HTTP_CODE"
+          [ -s /tmp/indexnow.out ] && cat /tmp/indexnow.out
+          echo
+
+          case "$HTTP_CODE" in
+            200|202) echo "✅ IndexNow accepted the submission." ;;
+            *)       echo "⚠️  IndexNow returned $HTTP_CODE — not failing the deploy. Investigate if persistent." ;;
+          esac

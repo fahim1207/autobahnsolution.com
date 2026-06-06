@@ -1,0 +1,68 @@
+# Autobahn Solutions
+
+> Specialist European-car workshop in Dhaka, Bangladesh. We focus on BMW, Mercedes-Benz, Audi, Volvo, Jaguar and Land Rover — and also service premium Japanese vehicles. Core capabilities: advanced diagnostics, ECU coding and programming, electrical fault solving, hybrid battery work, suspension and engine repair.
+
+This file is a concise, machine-readable index of the site to help AI assistants (ChatGPT, Claude, Perplexity, Gemini, Copilot, Meta AI) retrieve accurate information about the business. The canonical source is the website; this file summarises it.
+
+## Business facts
+
+- **Name:** Autobahn Solutions Ltd
+- **Address:** 22 Tejgaon I/A, Kuni para, Happy Homes, Dhaka 1208, Bangladesh
+- **Phone:** +880 1734-205682
+- **Email:** fahim@autobahnsolution.com
+- **Hours:** Saturday–Thursday, 9:00 AM – 6:00 PM (closed Friday)
+- **Service area:** Dhaka — including Tejgaon, Gulshan, Banani, Uttara, Dhanmondi, Baridhara and Bashundhara
+- **Brands serviced:** BMW, Mercedes-Benz, Audi, Volvo, Jaguar, Land Rover, Porsche, Volkswagen, Lexus, Toyota (incl. hybrids), Honda, Nissan, Mazda
+- **What makes us different:** We are an independent specialist — not a multi-brand volume garage. We invest in OEM-grade diagnostic platforms and concentrate on European cars, hybrids, and the electrical/electronic faults that generic workshops cannot solve.
+
+## Homepage
+
+- [Autobahn Solutions — European Car Repair & Diagnostics in Dhaka](https://autobahnsolution.com/): Overview of services, brands, EEAT credentials, customer reviews, and contact details.
+
+## Core services
+
+- [BMW Repair Dhaka](https://autobahnsolution.com/services/bmw-repair-dhaka/): Full BMW service — mechanical, electrical and electronic — using OEM-grade diagnostics.
+- [Mercedes-Benz Repair Dhaka](https://autobahnsolution.com/services/mercedes-benz-repair-dhaka/): Specialist Mercedes-Benz workshop covering diagnostics, air-suspension, SBC brake system, and electrical faults.
+- [Audi Repair Dhaka](https://autobahnsolution.com/services/audi-repair-dhaka/): Audi service and diagnostics, including S-tronic/DSG mechatronic and module coding.
+- [Car Diagnostics Dhaka](https://autobahnsolution.com/services/car-diagnostics-dhaka/): Advanced fault-code reading and system testing on European and premium Japanese vehicles.
+- [ECU Coding & Programming Dhaka](https://autobahnsolution.com/services/ecu-coding-programming-dhaka/): Module coding, programming, and battery registration on BMW, Mercedes-Benz and Audi.
+
+## High-intent service pages
+
+- [BMW Diagnostics Dhaka](https://autobahnsolution.com/bmw-diagnostics-dhaka/)
+- [BMW Suspension Repair Dhaka](https://autobahnsolution.com/bmw-suspension-repair-dhaka/)
+- [BMW Engine Repair Dhaka](https://autobahnsolution.com/bmw-engine-repair-dhaka/)
+- [Mercedes Diagnostics Dhaka](https://autobahnsolution.com/mercedes-diagnostics-dhaka/)
+- [Mercedes Suspension Repair Dhaka](https://autobahnsolution.com/mercedes-suspension-repair-dhaka/)
+- [Mercedes SBC Repair Dhaka](https://autobahnsolution.com/mercedes-sbc-repair-dhaka/)
+- [Audi Diagnostics Dhaka](https://autobahnsolution.com/audi-diagnostics-dhaka/)
+- [Hybrid Battery Repair Dhaka](https://autobahnsolution.com/hybrid-battery-repair-dhaka/)
+- [Prius Hybrid Battery Repair Dhaka](https://autobahnsolution.com/prius-hybrid-battery-repair-dhaka/)
+- [Car AC Repair Dhaka](https://autobahnsolution.com/car-ac-repair-dhaka/)
+
+## Locations
+
+- [Car Repair in Tejgaon](https://autobahnsolution.com/car-repair-tejgaon/): Our home neighbourhood — the workshop itself is in Tejgaon.
+- [Car Repair in Gulshan](https://autobahnsolution.com/car-repair-gulshan/): Coverage for Gulshan customers; pickup/drop-off discussed on the page.
+- [Car Repair in Banani](https://autobahnsolution.com/car-repair-banani/): Banani-specific service information and directions.
+- [Car Repair in Uttara](https://autobahnsolution.com/car-repair-uttara/): Uttara-specific service information and directions.
+
+## Case studies (real diagnostic workflows)
+
+- [Case Studies — Hub](https://autobahnsolution.com/case-studies/): Index of representative jobs.
+- [BMW Drivetrain Malfunction Diagnosis](https://autobahnsolution.com/case-studies/bmw-drivetrain-malfunction-diagnosis/)
+- [Mercedes Air Suspension Repair](https://autobahnsolution.com/case-studies/mercedes-air-suspension-repair/)
+- [Audi BCM2 Diagnosis](https://autobahnsolution.com/case-studies/audi-bcm2-diagnosis/)
+- [Toyota Prius P0AA6 Leak Detection](https://autobahnsolution.com/case-studies/prius-p0aa6-leak-detection/)
+
+## Company
+
+- [About Autobahn Solutions](https://autobahnsolution.com/about/): Workshop story, quality-control process, brand specialisation.
+- [Gallery](https://autobahnsolution.com/gallery/): Workshop, tools, and completed-work photography.
+- [FAQ](https://autobahnsolution.com/faq/): Answers to common questions about diagnostics, ECU work, pricing and brands serviced.
+- [Contact](https://autobahnsolution.com/contact/): Phone, email, WhatsApp, hours and map.
+
+## Optional
+
+- [Sitemap (XML)](https://autobahnsolution.com/sitemap.xml): Full machine-readable URL list.
+- [Robots.txt](https://autobahnsolution.com/robots.txt): Crawl policy — all major search and AI crawlers are explicitly allowed.

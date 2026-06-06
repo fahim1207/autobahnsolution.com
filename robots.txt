@@ -1,21 +1,130 @@
-# Autobahn Solutions Ltd - https://autobahnsolution.com
+# Autobahn Solutions Ltd — https://autobahnsolution.com
+# robots.txt — wave 3: explicit per-bot allow for search, social previews, and AI crawlers
+# Strategy: docs/seo/16-non-google-and-ai-search-roadmap.md
+
 User-agent: *
 Allow: /
 Disallow: /offline.html
 Disallow: /sw.js
+Disallow: /docs/
+Disallow: /infra/
 
-# Common AI / scraper bots - allowed (change to Disallow if you want to block)
+# ── Mainstream search engines (explicit allow) ───────────────────────────────
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# ── Apple (Maps / Siri / Spotlight / Apple Intelligence) ─────────────────────
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# ── AI assistants — training + retrieval ─────────────────────────────────────
+# OpenAI
 User-agent: GPTBot
 Allow: /
 
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+# Anthropic
 User-agent: ClaudeBot
 Allow: /
 
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# Google AI (Gemini / Vertex)
 User-agent: Google-Extended
 Allow: /
 
+User-agent: GoogleOther
+Allow: /
+
+# Perplexity
 User-agent: PerplexityBot
 Allow: /
 
-# Sitemap
+User-agent: Perplexity-User
+Allow: /
+
+# Meta (Llama / Meta AI / link previews)
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: Meta-ExternalFetcher
+Allow: /
+
+User-agent: FacebookExternalHit
+Allow: /
+
+# Amazon (Alexa / Rufus)
+User-agent: Amazonbot
+Allow: /
+
+# ByteDance (TikTok / Doubao)
+User-agent: Bytespider
+Allow: /
+
+# Cohere
+User-agent: cohere-ai
+Allow: /
+
+# Common Crawl — feeds most open-source LLM training corpora
+User-agent: CCBot
+Allow: /
+
+# Independent indexes (Brave Search / Kagi / Marginalia partially rely on these)
+User-agent: MojeekBot
+Allow: /
+
+User-agent: Diffbot
+Allow: /
+
+User-agent: MJ12bot
+Allow: /
+
+# ── Social previews ──────────────────────────────────────────────────────────
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: Pinterest
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+User-agent: TelegramBot
+Allow: /
+
+# ── Sitemap + IndexNow ───────────────────────────────────────────────────────
 Sitemap: https://autobahnsolution.com/sitemap.xml
+
+# IndexNow key file location (Bing / Yandex / Seznam / Naver use this for push notifications)
+# Key is non-secret; it only proves domain ownership at ping time.
+# See https://www.indexnow.org/documentation

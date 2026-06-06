@@ -38,11 +38,25 @@
 
     <!-- Additional Meta Tags -->
     <meta name="author" content="Autobahn Solutions Ltd">
-    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="geo.region" content="BD-13">
     <meta name="geo.placename" content="Dhaka">
     <meta name="geo.position" content="23.766631;90.405704">
     <meta name="ICBM" content="23.766631, 90.405704">
+
+    <!--
+      Search-engine site verification placeholders.
+      After verifying ownership in each tool, paste the supplied "content" value
+      into the matching tag and uncomment it. Do NOT commit a tag with an empty
+      content="" attribute — search engines treat that as a failed verification.
+
+      Bing Webmaster Tools  -> https://www.bing.com/webmasters/
+      Yandex Webmaster      -> https://webmaster.yandex.com/
+      Pinterest             -> https://www.pinterest.com/business/claim/
+    -->
+    <!-- <meta name="msvalidate.01"   content="PASTE_BING_TOKEN_HERE"> -->
+    <!-- <meta name="yandex-verification" content="PASTE_YANDEX_TOKEN_HERE"> -->
+    <!-- <meta name="p:domain_verify"  content="PASTE_PINTEREST_TOKEN_HERE"> -->
 
     <!-- Structured data: AutoRepair / LocalBusiness -->
     <script type="application/ld+json">
@@ -172,6 +186,25 @@
       "name": "Autobahn Solutions",
       "publisher": { "@id": "https://autobahnsolution.com/#business" },
       "inLanguage": "en-BD"
+    }
+    </script>
+
+    <!-- Structured data: WebPage + Speakable (voice search: Siri / Alexa / Google Assistant / AI readouts) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "@id": "https://autobahnsolution.com/#webpage",
+      "url": "https://autobahnsolution.com/",
+      "name": "BMW, Mercedes & Audi Repair in Dhaka | Autobahn Solutions",
+      "isPartOf": { "@id": "https://autobahnsolution.com/#website" },
+      "about": { "@id": "https://autobahnsolution.com/#business" },
+      "primaryImageOfPage": "https://autobahnsolution.com/assets/images/social-preview-square.jpg",
+      "inLanguage": "en-BD",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [".hero-section h1", ".hero-section .lead"]
+      }
     }
     </script>
 
