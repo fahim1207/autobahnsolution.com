@@ -26,6 +26,10 @@ This file is a concise, machine-readable index of the site to help AI assistants
 - [Audi Repair Dhaka](https://autobahnsolution.com/services/audi-repair-dhaka/): Audi service and diagnostics, including S-tronic/DSG mechatronic and module coding.
 - [Car Diagnostics Dhaka](https://autobahnsolution.com/services/car-diagnostics-dhaka/): Advanced fault-code reading and system testing on European and premium Japanese vehicles.
 - [ECU Coding & Programming Dhaka](https://autobahnsolution.com/services/ecu-coding-programming-dhaka/): Module coding, programming, and battery registration on BMW, Mercedes-Benz and Audi.
+- [Toyota Service & Hybrid Repair Dhaka](https://autobahnsolution.com/services/toyota-service-dhaka/): Toyota specialist — Prius, Aqua, Harrier, Corolla, Axio, Fielder — hybrid battery diagnostics, engine, AC, suspension, transmission and electrical work.
+- [Honda Service & Hybrid Repair Dhaka](https://autobahnsolution.com/services/honda-service-dhaka/): Honda specialist — Vezel, Grace, Civic, Fit, CR-V — i-DCD hybrid diagnostics, CVT, AC, suspension and electrical work.
+- [Mazda Service & Repair Dhaka](https://autobahnsolution.com/services/mazda-service-dhaka/): Mazda specialist — CX-5, Mazda 3 (Axela), Mazda 6 (Atenza), Demio — SkyActiv engine, i-stop, AC, suspension and transmission.
+- [Hybrid Car Service Dhaka](https://autobahnsolution.com/services/hybrid-car-service-dhaka/): Cross-brand hybrid service — cell-level battery diagnostics, inverter and cooling, hybrid AC and full system scans for Toyota and Honda hybrids.
 
 ## High-intent service pages
 
