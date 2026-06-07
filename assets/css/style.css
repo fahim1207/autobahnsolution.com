@@ -1846,30 +1846,6 @@ footer a.text-muted:hover {
 }
 
 /* =========================================================================
-   Brand logo lockup
-   The brand logo PNG has white lettering, so it needs to sit on a dark
-   surface to stay legible on any background (light theme, transparent areas,
-   future placements). This reusable wrapper guarantees that contrast without
-   editing the source asset, and keeps sizing/padding consistent everywhere.
-   ========================================================================= */
-.brand-logo-wrap {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: #0d0d0f;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 8px;
-    padding: 4px 9px;
-    line-height: 0;
-}
-
-.brand-logo-img {
-    display: block;
-    width: auto;
-    /* height comes from the inline height attribute (40px navbar / 30px footer) */
-}
-
-/* =========================================================================
    Sliding customer-reviews carousel (homepage #testimonials)
    Rendered by initReviewsCarousel() from /assets/js/reviews.js.
    ========================================================================= */
