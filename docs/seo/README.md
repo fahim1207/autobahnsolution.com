@@ -29,6 +29,7 @@
 | 09 | [Implementation Roadmap](09-implementation-roadmap.md) | Phased plan: objectives, tasks, deliverables, deps, success criteria | Everyone |
 | 10 | [Backlog & Todos & Queue](10-backlog-and-todos.md) | Master backlog + phased `[ ]` checklists + execution queue | Everyone |
 | 11 | [Page Briefs & Templates](11-page-briefs.md) | Per-page specs, on-page templates, schema snippets | Dev + Content |
+| 17 | [Japanese Car SEO Expansion](17-japanese-car-seo-expansion.md) | Toyota/Honda/Mazda/hybrid pages, intent, internal linking, guardrails | Dev + Content |
 
 ## The one-paragraph strategy
 

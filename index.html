@@ -293,7 +293,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
             <a class="navbar-brand fw-bold d-flex align-items-center" href="#home">
-                <img src="/assets/images/brand-logo.png" alt="Autobahn Solutions" height="40" decoding="async" class="me-2" style="filter: brightness(1.2) contrast(1.3);">
+                <span class="brand-logo-wrap me-2"><img src="/assets/images/brand-logo.png" alt="Autobahn Solutions" height="40" decoding="async" class="brand-logo-img"></span>
                 <span class="navbar-title">Autobahn Solutions Ltd</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -834,70 +834,45 @@
                 <h2 class="fw-bold reveal-element">What Our Customers Say</h2>
                 <p class="lead text-muted reveal-element">Genuine reviews from our customers on Google</p>
             </div>
-            <!-- Real Google reviews, transcribed verbatim from the business's Google Business Profile. No review schema (self-serving review rich results aren't permitted for LocalBusiness). -->
-            <div class="row g-4">
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 border-0 shadow-sm reveal-element">
-                        <div class="card-body p-4">
-                            <div class="mb-2 text-warning"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
-                            <p class="mb-3">&ldquo;If you drive a high end European vehicle. This is the right place to get it serviced. They know the fluid recommendation and go by the books. Best place for your Range Rover and Audi and Mercedes Benz especially.&rdquo;</p>
-                            <div class="d-flex align-items-center">
-                                <i class="bi bi-google text-danger me-2 fs-5"></i>
-                                <div><h3 class="h6 mb-0">Fatema Tuz Jenia</h3><small class="text-muted">Google review</small></div>
-                            </div>
-                        </div>
-                    </div>
+
+            <!--
+              Sliding reviews carousel.
+              Reviews are REAL Google reviews, transcribed verbatim from the
+              business's Google Business Profile. They live in ONE place —
+              /assets/js/reviews.js — and are rendered by initReviewsCarousel()
+              in main.js. To add or edit a review, edit /assets/js/reviews.js
+              (instructions are at the top of that file). The static slide below
+              is only a no-JavaScript fallback. No review schema is emitted —
+              self-serving review rich results are not permitted for LocalBusiness.
+            -->
+            <div class="reviews-carousel reveal-element" id="reviewsCarousel" aria-roledescription="carousel" aria-label="Customer reviews">
+                <button type="button" class="reviews-arrow reviews-arrow--prev" aria-label="Previous review" data-reviews-prev>
+                    <i class="bi bi-chevron-left" aria-hidden="true"></i>
+                </button>
+
+                <div class="reviews-viewport" data-reviews-viewport>
+                    <ul class="reviews-track list-unstyled mb-0" data-reviews-track>
+                        <li class="review-slide" role="group" aria-roledescription="review">
+                            <figure class="review-card">
+                                <div class="review-stars" role="img" aria-label="Rated 5 out of 5 stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                                <blockquote class="review-text mb-0">&ldquo;If you drive a high end European vehicle. This is the right place to get it serviced. They know the fluid recommendation and go by the books. Best place for your Range Rover and Audi and Mercedes Benz especially.&rdquo;</blockquote>
+                                <figcaption class="review-meta">
+                                    <i class="bi bi-google" aria-hidden="true"></i>
+                                    <span><span class="review-name">Fatema Tuz Jenia</span><span class="review-source">Google review</span></span>
+                                </figcaption>
+                            </figure>
+                        </li>
+                    </ul>
                 </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 border-0 shadow-sm reveal-element">
-                        <div class="card-body p-4">
-                            <div class="mb-2 text-warning"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
-                            <p class="mb-3">&ldquo;I recently visited Autobahn Solution Ltd and it exceeded all my expectations. The staff was incredibly professional, knowledgeable, and friendly. They diagnosed my car&rsquo;s issues quickly and explained everything in detail before starting the repairs. The workshop was clean, well-equipped, and organized, which gave me confidence in their expertise.&rdquo;</p>
-                            <div class="d-flex align-items-center">
-                                <i class="bi bi-google text-danger me-2 fs-5"></i>
-                                <div><h3 class="h6 mb-0">Planet of Perman</h3><small class="text-muted">Google review</small></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 border-0 shadow-sm reveal-element">
-                        <div class="card-body p-4">
-                            <div class="mb-2 text-warning"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
-                            <p class="mb-3">&ldquo;My car was rear-ended, and I took it to Samiul Bhai and his team at Autobahn. They did an absolutely immaculate job, restoring it perfectly back to its original state. The attention to detail, professionalism, and care they showed throughout the process was truly impressive. Highly recommended!&rdquo;</p>
-                            <div class="d-flex align-items-center">
-                                <i class="bi bi-google text-danger me-2 fs-5"></i>
-                                <div><h3 class="h6 mb-0">Saif Alam</h3><small class="text-muted">Local Guide &middot; Google review</small></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 border-0 shadow-sm reveal-element">
-                        <div class="card-body p-4">
-                            <div class="mb-2 text-warning"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
-                            <p class="mb-3">&ldquo;Autobahn Solutions Ltd is an excellent choice for microbus repairs. Their team is skilled, and they complete the work on time. The service is reliable, and they treat customers with care. The workshop is well-organized, and the staff are friendly and professional. I&rsquo;m very happy with their service and would recommend them to others.&rdquo;</p>
-                            <div class="d-flex align-items-center">
-                                <i class="bi bi-google text-danger me-2 fs-5"></i>
-                                <div><h3 class="h6 mb-0">Md Arman</h3><small class="text-muted">Google review</small></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 border-0 shadow-sm reveal-element">
-                        <div class="card-body p-4">
-                            <div class="mb-2 text-warning"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
-                            <p class="mb-3">&ldquo;One of the best place to send your beloved car. Starting from Japanese to European they have a solution for every brand.&rdquo;</p>
-                            <div class="d-flex align-items-center">
-                                <i class="bi bi-google text-danger me-2 fs-5"></i>
-                                <div><h3 class="h6 mb-0">Diamond Azad</h3><small class="text-muted">Local Guide &middot; Google review</small></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
+                <button type="button" class="reviews-arrow reviews-arrow--next" aria-label="Next review" data-reviews-next>
+                    <i class="bi bi-chevron-right" aria-hidden="true"></i>
+                </button>
             </div>
-            <div class="text-center mt-5 reveal-element">
+
+            <div class="reviews-dots" data-reviews-dots role="tablist" aria-label="Choose a review"></div>
+
+            <div class="text-center mt-4 reveal-element">
                 <a href="https://search.google.com/local/reviews?placeid=ChIJ78WIJn7HVTcRMeCELtvxjv8" class="btn btn-danger btn-lg" target="_blank" rel="noopener">
                     <i class="bi bi-google me-2"></i>Read all our Google reviews
                 </a>
@@ -979,7 +954,7 @@
             <div class="row g-4">
                 <div class="col-lg-4">
                     <div class="d-flex align-items-center mb-3">
-                        <img src="/assets/images/brand-logo.png" alt="Autobahn Solutions" height="30" loading="lazy" decoding="async" class="me-2" style="filter: brightness(1.2) contrast(1.3);">
+                        <span class="brand-logo-wrap me-2"><img src="/assets/images/brand-logo.png" alt="Autobahn Solutions" height="30" loading="lazy" decoding="async" class="brand-logo-img"></span>
                         <h5 class="mb-0">Autobahn Solutions Ltd</h5>
                     </div>
                     <p class="text-muted">Dhaka's specialist workshop for European cars &mdash; BMW, Mercedes-Benz, Audi, Volvo, Jaguar and Land Rover &mdash; with OEM-grade diagnostics, ECU coding and expert electrical fault solving.</p>
@@ -996,8 +971,10 @@
                         <li><a href="/services/bmw-repair-dhaka/" class="text-muted text-decoration-none">BMW Repair</a></li>
                         <li><a href="/services/mercedes-benz-repair-dhaka/" class="text-muted text-decoration-none">Mercedes-Benz Repair</a></li>
                         <li><a href="/services/audi-repair-dhaka/" class="text-muted text-decoration-none">Audi Repair</a></li>
+                        <li><a href="/services/toyota-service-dhaka/" class="text-muted text-decoration-none">Toyota Service</a></li>
+                        <li><a href="/services/honda-service-dhaka/" class="text-muted text-decoration-none">Honda Service</a></li>
+                        <li><a href="/services/hybrid-car-service-dhaka/" class="text-muted text-decoration-none">Hybrid Car Service</a></li>
                         <li><a href="/services/car-diagnostics-dhaka/" class="text-muted text-decoration-none">Car Diagnostics</a></li>
-                        <li><a href="/services/ecu-coding-programming-dhaka/" class="text-muted text-decoration-none">ECU Coding &amp; Programming</a></li>
                         <li><a href="/services/" class="text-muted text-decoration-none">All Services</a></li>
                     </ul>
                 </div>
@@ -1043,6 +1020,8 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
+    <!-- Customer reviews data (single source of truth — see file header to update) -->
+    <script src="/assets/js/reviews.js" defer></script>
     <!-- Custom JS -->
     <script src="/assets/js/main.js" defer></script>
     <script>

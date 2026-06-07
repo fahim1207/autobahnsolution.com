@@ -10,7 +10,127 @@ document.addEventListener('DOMContentLoaded', function() {
     initFAB();
     initThemeToggle();
     initLeadTracking();
+    initReviewsCarousel();
 });
+
+// Sliding Google-reviews carousel
+// Renders from window.AUTOBAHN_REVIEWS (see /assets/js/reviews.js — the single
+// source of truth for review content). One review per slide, with prev/next
+// arrows, pagination dots, native swipe on touch, keyboard support and gentle
+// autoplay that respects prefers-reduced-motion. If the data file is missing or
+// empty, the static fallback slide already in the HTML is left untouched.
+function initReviewsCarousel() {
+    const root = document.getElementById('reviewsCarousel');
+    if (!root) return;
+
+    const track = root.querySelector('[data-reviews-track]');
+    const dotsWrap = document.querySelector('[data-reviews-dots]');
+    const prevBtn = root.querySelector('[data-reviews-prev]');
+    const nextBtn = root.querySelector('[data-reviews-next]');
+    if (!track) return;
+
+    const reviews = Array.isArray(window.AUTOBAHN_REVIEWS) ? window.AUTOBAHN_REVIEWS : [];
+
+    // No data → keep the static fallback slide, hide controls we can't drive.
+    if (!reviews.length) {
+        if (prevBtn) prevBtn.style.display = 'none';
+        if (nextBtn) nextBtn.style.display = 'none';
+        return;
+    }
+
+    const esc = (s) => String(s == null ? '' : s).replace(/[&<>"']/g, (c) => (
+        { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]
+    ));
+    const stars = (n) => {
+        const r = Math.max(0, Math.min(5, Math.round(Number(n) || 0)));
+        let out = '';
+        for (let i = 0; i < 5; i++) {
+            out += '<i class="bi bi-star' + (i < r ? '-fill' : '') + '"></i>';
+        }
+        return { html: out, count: r };
+    };
+
+    // Build slides from data (replaces the static fallback).
+    track.innerHTML = reviews.map((rv, i) => {
+        const s = stars(rv.rating);
+        return '<li class="review-slide" role="group" aria-roledescription="review" aria-label="Review ' +
+            (i + 1) + ' of ' + reviews.length + '">' +
+            '<figure class="review-card">' +
+            '<div class="review-stars" role="img" aria-label="Rated ' + s.count + ' out of 5 stars">' + s.html + '</div>' +
+            '<blockquote class="review-text mb-0">&ldquo;' + esc(rv.text) + '&rdquo;</blockquote>' +
+            '<figcaption class="review-meta">' +
+            '<i class="bi bi-google" aria-hidden="true"></i>' +
+            '<span><span class="review-name">' + esc(rv.name) + '</span>' +
+            '<span class="review-source">' + esc(rv.source || 'Google review') + '</span></span>' +
+            '</figcaption></figure></li>';
+    }).join('');
+
+    const slides = Array.from(track.querySelectorAll('.review-slide'));
+    let index = 0;
+
+    // Pagination dots
+    let dots = [];
+    if (dotsWrap) {
+        dotsWrap.innerHTML = reviews.map((rv, i) =>
+            '<button type="button" class="reviews-dot" role="tab" aria-label="Show review ' +
+            (i + 1) + (rv.name ? ' by ' + esc(rv.name) : '') + '"></button>'
+        ).join('');
+        dots = Array.from(dotsWrap.querySelectorAll('.reviews-dot'));
+    }
+
+    const setActive = (i) => {
+        index = (i + slides.length) % slides.length;
+        dots.forEach((d, di) => {
+            const on = di === index;
+            d.classList.toggle('is-active', on);
+            d.setAttribute('aria-selected', on ? 'true' : 'false');
+        });
+    };
+
+    const goTo = (i, smooth) => {
+        const target = (i + slides.length) % slides.length;
+        track.scrollTo({ left: target * track.clientWidth, behavior: smooth === false ? 'auto' : 'smooth' });
+        setActive(target);
+    };
+
+    // Keep the active dot in sync while the user swipes/scrolls.
+    let scrollTimer;
+    track.addEventListener('scroll', () => {
+        clearTimeout(scrollTimer);
+        scrollTimer = setTimeout(() => {
+            const i = Math.round(track.scrollLeft / track.clientWidth);
+            setActive(i);
+        }, 80);
+    }, { passive: true });
+
+    if (prevBtn) prevBtn.addEventListener('click', () => goTo(index - 1));
+    if (nextBtn) nextBtn.addEventListener('click', () => goTo(index + 1));
+    dots.forEach((d, i) => d.addEventListener('click', () => goTo(i)));
+
+    // Keyboard arrows when the carousel has focus
+    root.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') { e.preventDefault(); goTo(index - 1); }
+        else if (e.key === 'ArrowRight') { e.preventDefault(); goTo(index + 1); }
+    });
+
+    setActive(0);
+
+    // Gentle autoplay — paused on hover, focus or touch, and off entirely when
+    // the user prefers reduced motion or there's only one review.
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!reduceMotion && slides.length > 1) {
+        let timer = null;
+        const start = () => { timer = setInterval(() => goTo(index + 1), 6000); };
+        const stop = () => { if (timer) { clearInterval(timer); timer = null; } };
+        start();
+        ['mouseenter', 'focusin', 'touchstart'].forEach((ev) => root.addEventListener(ev, stop, { passive: true }));
+        ['mouseleave', 'focusout'].forEach((ev) => root.addEventListener(ev, start));
+        document.addEventListener('visibilitychange', () => { document.hidden ? stop() : (stop(), start()); });
+    }
+
+    // Re-align to the active slide if the viewport is resized.
+    window.addEventListener('resize', debounce(() => goTo(index, false), 150));
+}
 
 // Lead-conversion tracking -> GA4
 // Fires a `generate_lead` event when a visitor clicks WhatsApp, call, or email.
